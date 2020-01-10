@@ -25,7 +25,7 @@ The only way to really internalize this stuff is to implement it yourself. Thus,
 
 ## Course Parts and Programming Languages
 
-The course will be taught in 2 parts, starting with some applied econometric theory and assignments, and then moving to more computational topics in the second part of the course.
+The course will be taught in two parts, starting with some applied econometric theory and assignments, and then moving to more computational topics in the second part of the course.
 
 In part (1), we will use R for the majority of examples. If you wish, you may choose to use another programming language for completing assignments, but some may be more difficult (particularly the ML parts).
 
