@@ -3,7 +3,7 @@
 ## Empirical Methods for Applied Micro
 
 
-- **Instructors:** murryc@bc.edu and sweeneri@bc.edu
+- **Instructor:** charles.murry@bc.edu
 - **Office Hours:** TBD
 
 **Course Description**
@@ -15,7 +15,7 @@ The only way to really internalize this stuff is to implement it yourself. Thus,
 ### Problem sets
 - (roughly) bi-weekly problem sets
 - 50% of grade 
-- **all problem sets must be submitted through [canvas](https://bostoncollege.instructure.com/courses/1591956)**
+- **all problem sets must be submitted through [canvas](https://bostoncollege.instructure.com/courses/1603256)**
 - you are allowed to work in groups, but each student must code up and submit their own problem set. 
 
 
@@ -25,8 +25,10 @@ The only way to really internalize this stuff is to implement it yourself. Thus,
 
 ## Course Parts and Programming Languages
 
-The course will be taught in 2 parts, starting with some applied econometric theory and assignments (taught by Rich Sweeney), and then moving to more computational topics in the second part of the course (taught by Charlie Murry).
+The course will be taught in 2 parts, starting with some applied econometric theory and assignments, and then moving to more computational topics in the second part of the course.
 
 In part (1), we will use R for the majority of examples. If you wish, you may choose to use another programming language for completing assignments, but some may be more difficult (particularly the ML parts).
 
 For part (2), we will be using Matlab. Students may also consider using Julia. 
+
+I have experience with Matlab, R, Stata, and Julia. Although you can use a different language, I will not be able to support other languages. 
