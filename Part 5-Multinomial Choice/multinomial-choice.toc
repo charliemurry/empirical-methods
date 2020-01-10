@@ -1,0 +1,5 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Multinomial Choice}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{A Semiparametric Estimator}{54}{0}{1}
+\beamer@sectionintoc {2}{Convexity and Computation}{56}{0}{2}
+\beamer@subsectionintoc {2}{1}{Nested Logit Example}{59}{0}{2}
