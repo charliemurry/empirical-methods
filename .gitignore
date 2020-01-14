@@ -1,0 +1,12 @@
+mynotes.md
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.nav
+*.snm
+*.synctex.gz
+*.fls 
+*.out 
+*.toc
+*.DS_Store

@@ -5,13 +5,16 @@
 \usepackage{comment}
 
 \title [Non-parametrics]{Nonparametrics and Local Methods}
-\author{Richard L. Sweeney}
+\author{Charlie Murry \& Richard L. Sweeney}
 \institute{based on slides by Chris Conlon}
-\date{Empirical Methods \\ Spring 2019}
+\date{Empirical Methods \\ Spring 2020}
 
 \setbeamerfont{equation}{size=\tiny}
 
 \begin{document}
+
+
+%%%%%%%%% New Frame %%%%%%%%%
 
 \begin{frame}
 \titlepage
@@ -25,7 +28,10 @@
 
 \begin{frame}{Section outline}
 
-Why nonparametrics?
+Why nonparametrics?\\[1em]
+
+Not always just interested in the mean of a (conditional) distribution. 
+
 \begin{itemize}
   \item sometimes just interested in the distribution % auctions?
   \item sometimes this is the first stage and we want to integrate
@@ -36,6 +42,39 @@ In this section, we are interested in estimating the \textbf{density} $f(x)$ und
 
 \end{frame}
 
+
+
+%%%%%%%%% New Frame %%%%%%%%%
+
+\begin{frame}[c]\frametitle{Examples from my own research}
+    
+
+1. Estimation involves matching whole distribution (not just mean/variance).\\[-.25em]
+\begin{itemize}
+  \item Ciliberto, Tamer, and Murry -- Estimating static full-info games. 
+  \item Histogram
+\end{itemize}
+
+2. First step to recover distributions as input into structural estimation.\\[-.25em]
+\begin{itemize}
+  \item Gaurab, Murry, and Williams -- Dynamic price discrimination in airline industry. 
+  \item Kernel and NN.
+\end{itemize}
+
+
+3. Distribution is outcome of estimation.\\[-.25em]
+\begin{itemize}
+  \item Murry and Schurter -- Estimate w.t.p. of used car purchasers. [like an auction]
+  \item semi-parametric regression.
+\end{itemize}
+
+
+\end{frame}
+
+
+
+%%%%%%%%% New Frame %%%%%%%%%
+
 \begin{frame}{Let's start with the histogram}
   One of the more successful and popular uses of nonparametric methods is estimating the density or distribution function $f(x)$ or $F(x)$.
   
@@ -44,17 +83,26 @@ In this section, we are interested in estimating the \textbf{density} $f(x)$ und
   \end{eqnarray*}
     
   \begin{itemize}
-  \item Divide the dataset into bins, count up fraction of observations in each bins
+  \item Divide the dataset into bins, count up fraction of observations in each bins.
+  \item $2h$ is the length of a bin. 
   \end{itemize}
 \end{frame}
  
+
+
+%%%%%%%%% New Frame %%%%%%%%%
+
 \begin{frame}{Kernel Estimation}
   Let's rewrite the histogram estimator
   \begin{eqnarray*}
     \hat{f}_{HIST}(x_0) = \frac{1}{Nh} \sum_{i=1}^N  K \left( \frac{x_i - x_0}{h} \right)
   \end{eqnarray*}
 
-  Where $K(z) = \frac{1}{2} \cdot \mathbf{1} (|z| < 1) $
+  Where $K(z) = \frac{1}{2} \cdot \mathbf{1} (|z| < 1) $\\[1em]
+
+  We can think of more general forms of $K(z;h)$. 
+
+
 \end{frame}
 
 \begin{frame}{Density estimator interpretation}
@@ -347,7 +395,15 @@ $$ {\hat F}_n(y)= \frac{1}{n}\sum_{i=1}^n \mathcal{K}\left(
 \frac{y-y_i}{h}\right) $$
 as a reasonable estimator of the cdf in $y$.
 
-\pause
+}
+
+\frame{\frametitle{Back to the CDF cont...}
+
+Reasonable estimator of the cdf in $y$?
+
+
+$$ {\hat F}_n(y)= \frac{1}{n}\sum_{i=1}^n \mathcal{K}\left(
+\frac{y-y_i}{h}\right) $$
 
 Very reasonable indeed:
 \begin{itemize}

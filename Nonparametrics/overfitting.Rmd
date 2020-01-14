@@ -1,0 +1,76 @@
+---
+title: "Overfitting"
+output: html_notebook
+author: Charlie Murry (BC) [Based on notes from Yen-Chi Chen (UW)]
+---
+
+## Heading
+
+#### Heading
+
+Take the following data. Our goal is to estimate a curve through the data for prediction.
+
+```{r}
+X = runif(200, min=0, max=4*pi)
+Y = sin(X) + rnorm(200, sd=0.4)
+plot(X,Y, pch=1)
+```
+
+Obviosuly, linear regression would do a terrible job at representing the data generating process.
+
+```{r}
+fit = lm(Y~X)
+plot(X,Y, pch=1)
+abline(fit, lwd=4, col="blue")
+```
+
+So we can use Kernel Density Estiamtion (KDE), or *kernel regression*. KDE will create a local estimate of the relationship between $X$ and $Y$ by smoothing over nearby points (see the slides for details). 
+
+```{r}
+Kreg = ksmooth(x=X,y=Y,kernel = "box",bandwidth = 0.9)
+plot(X,Y,pch=1)
+lines(Kreg, lwd=4, col="orange")
+```
+
+
+We can use a Guassian kernel and adjust the bandwidth. 
+
+```{r}
+Kreg1 = ksmooth(x=X,y=Y,kernel = "normal",bandwidth = 0.1)
+Kreg2 = ksmooth(x=X,y=Y,kernel = "normal",bandwidth = 0.9)
+Kreg3 = ksmooth(x=X,y=Y,kernel = "normal",bandwidth = 3.0)
+plot(X,Y,pch=1)
+lines(Kreg1, lwd=4, col="orange")
+lines(Kreg2, lwd=4, col="purple")
+lines(Kreg3, lwd=4, col="limegreen")
+legend("topright", c("h=0.1","h=0.9","h=3.0"), lwd=6, col=c("orange","purple","limegreen"))
+```
+
+
+### Now in Julia
+
+```{julia}
+# Pkg.add("Plots")
+using Plots
+
+X = collect(range(0,stop=4*pi, length=200));
+Y = sin.(X) + 0.3*randn(200,1);
+scatter(Y, X)
+```
+
+The rest you guys can do...
+
+
+## How to use an Rnotebook
+
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
