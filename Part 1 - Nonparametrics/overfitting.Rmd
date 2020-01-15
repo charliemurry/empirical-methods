@@ -4,11 +4,8 @@ output: html_notebook
 author: Charlie Murry (BC) [Based on notes from Yen-Chi Chen (UW)]
 ---
 
-## Heading
 
-#### Heading
-
-Take the following data. Our goal is to estimate a curve through the data for prediction.
+I simulated the following data. Our goal is to estimate a curve through the data for prediction.
 
 ```{r}
 X = runif(200, min=0, max=4*pi)
