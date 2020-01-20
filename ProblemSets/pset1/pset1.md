@@ -10,10 +10,6 @@ Guerre, Perrigne and Voung (ECMA 2000) show that the distibution of (unobserved)
 
 I simulated bids from a First Price Sealed Bid (FPSB) auction with three bidders. The bid data is in bids1.csv.
 
-In this problem, we are going to simulate $N$ auctions, and then try to recover the (known) distribution of valuations ($v$) using GPV.
-
-[Hickman (IJIO, 2010)](https://www.sciencedirect.com/science/article/pii/S0167718709001076) provides code to simulate bid functions from several distributions in Matlab. This code, available on [his website](http://home.uchicago.edu/hickmanbr/research.html), has been placed in this directory.
-
 1. Estimate the density of bids using
     - an assumed normal distribution,
     - a Gaussian kernel,
@@ -30,4 +26,4 @@ For the kernels, use a plug-in estimate for the optimal bandwidth.
 
 5. Finally, estimate the distribution of $v$ using another Epanechnikov kernel (you can just use the plug-in bandwidth).
 
-6. Guess what distribution the valuations were generated with. What are the estimated location and scale parameters (no need to provide standard errors).
+6. Guess what distribution the valuations were generated with. What are the estimated location and scale parameters (no need to provide standard errors, I just want a heuristic guess).
