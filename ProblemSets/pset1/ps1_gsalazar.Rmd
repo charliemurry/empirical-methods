@@ -1,0 +1,240 @@
+---
+title: "Problem Set 1 - Estimating Auctions"
+author: "Gonzalo Salazar"
+date: "1/23/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T)
+
+rm(list=ls()) # clean all objects
+
+#getwd() # give us the directory in which we are working in
+```
+
+## Loading bids and setting working space
+```{r working space}
+
+library(MASS)
+library(latex2exp)
+
+setwd("/Users/gsalazar/Documents/GitHub/empirical-methods/ProblemSets/pset1/")
+
+dt <- read.csv(file = 'bids1.csv', header=FALSE, dec = ".")
+names(dt)[1]<-paste("bids")
+
+```
+
+## Question 1
+```{r q1 density of bids}
+
+nBids <- length(dt$bids) # number of bids to draw from an estimated density function
+
+ht <- hist(dt$bids, main = "Histogram of Bids", xlab = "Bids", col = "darkolivegreen2", breaks = 14) # histogram of bids - note the # of breaks was augmented in order to recognize graphically which empirical density fits best
+
+# Fitting a normal distribution
+fitN <- fitdistr(dt$bids, "normal")
+dNORM <- dnorm(seq(0,5,length=nBids), fitN$estimate[1], fitN$estimate[2])
+
+# Using a Gaussian Kernel - note that nrd0 uses the Silverman's ROT
+dGAUS <- density(dt$bids, bw.nrd0(dt$bids), adjust = 1, 
+                kernel = c("gaussian"),
+                weights = NULL)
+
+# Using an Epanechnikov Kernel - note that nrd0 uses the Silverman's ROT
+dEPA <- density(dt$bids, bw.nrd0(dt$bids), adjust = 1, 
+                kernel = c("epanechnikov"),
+                weights = NULL)
+
+```
+
+
+## Question 2
+```{r q2 loocv}
+# Least-squares cross-validation for bandwidth - LOOCV
+
+FUN <- function(optBw){
+  fhat=Vectorize(function(x) density(dt$bids,from=x,to=x,n=1,bw=optBw)$y)
+  fhati=Vectorize(function(i) density(dt$bids[-i], from=dt$bids[i],to=dt$bids[i],n=1,bw=optBw)$y)
+  F=fhati(1:length(dt$bids))
+  return(integrate(function(x) fhat(x)^2,-Inf,Inf)$value-2*mean(F))
+}
+
+vx = seq(.05,0.6,by=.01)
+vy = Vectorize(FUN)(vx) 
+
+plot(vx,vy, col = "darkgreen", lwd = 2)
+
+hOpt<- optimize(FUN,interval=c(.05,6))
+
+hCV = hOpt$minimum
+
+dEPA_CV <- density(dt$bids, bw=hCV, adjust = 1, 
+                kernel = c("epanechnikov"),
+                weights = NULL, n=)
+
+```
+
+## Question 3
+```{r q3 density plot}
+
+plot(ht, freq = FALSE, xlim=c(0,5) ,ylim=c(0,.6), col = "darkolivegreen2", xlab = "Bid Values", main = "Histogram of bids + Estimated densities")
+
+lines(seq(0,5,length = nBids),dNORM, col = "darkorchid1", lwd = 3)
+lines(dGAUS, col = "deepskyblue", lwd = 4)
+lines(dEPA, col = "green4", lty=1, lwd = 3)
+lines(dEPA_CV, col = "maroon", lty=6, lwd = 3)
+
+legend(3.1, .6, legend=c("Normal fit","Gaussian (ROT)", "Epanechnikov (ROT)", "Epanechnikov (LOOCV)"),
+       col=c("darkorchid1","deepskyblue", "green4", "maroon"), lty = c(1,1,1,6), lwd = c(3,4,3,3), cex=.55)
+
+```
+
+Given the plot above, it seems to be that the empirical Gaussian kernel distribution (with plug-in estimate for the optimal bandwidth) is the best fit for the true distribution. This is because, it captures very well the fall in the bids after the value of 2, and then the increase when these are close to 2.5.
+
+## Question 4
+
+```{r q4 valuations}
+
+nBidders <- 3 # number of bidders
+dx <- 0.01 # distance between observations to integrate the density
+
+# Estimated density function
+gb_hat <- function(BIDS, NUMBER_OF_BIDS) {
+  aux <- density(BIDS, bw=hCV, adjust = 1, 
+                kernel = c("epanechnikov"),
+                weights = NULL, n=NUMBER_OF_BIDS) # Draw n bids from a distribution with epanechnikov kernel and LOOCV
+  
+  density_hat <- aux$x 
+  return(density_hat)
+}
+
+# Estimated cummulative function
+Gb_hat <- function(BIDS, NUMBER_OF_BIDS, dx0) {cumsum(gb_hat(BIDS, NUMBER_OF_BIDS)*dx0)} 
+
+# Estimated valuations (using GPV)
+val_hat <- function(BIDS, NUMBER_OF_BIDS, NUMBER_OF_BIDDERS, dx0) {
+  results <-    BIDS + Gb_hat(BIDS, NUMBER_OF_BIDS, dx0)/((NUMBER_OF_BIDDERS-1)*gb_hat(BIDS, NUMBER_OF_BIDS))
+  return(results)
+}
+
+vHat <- val_hat(dt$bids, nBids, nBidders, dx) # Evaluates bids into GPV's formula to get the estimated valuations
+
+vHat <- vHat[vHat>=0] # I restricted them to positive values
+
+```
+
+## Question 5
+
+The plot of the estimated density can be found in Question 6. The code is attached below.
+
+```{r q5 density of valuations}
+
+# Using an Epanechnikov Kernel - note that nrd0 uses the Silverman's ROT
+fv <- density(vHat, bw.nrd0(vHat), adjust = 1, 
+                kernel = c("epanechnikov"),
+                weights = NULL, n=nBids)
+
+```
+
+## Question 6 (also answering Q6 from the "followup.md" file)
+
+```{r q6 histogram and fit for valuations}
+
+# Fitting a normal distribution
+fitN_val <- fitdistr(vHat, "normal")
+dNORM_val <- dnorm(seq(0,5,length=nBids), fitN_val$estimate[1], fitN_val$estimate[2])
+
+# Using a Gaussian Kernel - note that nrd0 uses the Silverman's ROT
+dGAUS_val <- density(vHat, bw.nrd0(vHat), adjust = 1, 
+                kernel = c("gaussian"),
+                weights = NULL)
+
+# Using an Epanechnikov Kernel - note that nrd0 uses the Silverman's ROT
+dEPA_val <- density(vHat, bw.nrd0(vHat), adjust = 1, 
+                kernel = c("epanechnikov"),
+                weights = NULL)
+
+# Using an Biweight Kernel - note that nrd0 uses the Silverman's ROT
+dBI_val <- density(vHat, bw.nrd0(vHat), adjust = 1, 
+                kernel = c("biweight"),
+                weights = NULL)
+
+plot(hist(vHat, breaks = 14, main = "Histogram of Estimated Valuations", xlab=TeX('$\\hat{v}$')), freq = FALSE, xlim=c(0,5), ylim=c(0,.6), col = "khaki1", xlab =TeX('Estimated Valuations ($\\hat{v}$)'), main = "Histogram of Est. Valuations + Estimated densities") # histogram of valuations - note the # of breaks was augmented in order to recognize graphically which empirical density fits best
+
+lines(seq(0,5,length = nBids),dNORM_val, col = "forestgreen", lwd = 3)
+lines(dGAUS_val, col = "deepskyblue", lwd = 3)
+lines(dEPA_val, col = "violet", lwd = 5)
+lines(dBI_val, col = "steelblue4", lty=6, lwd = 3)
+
+legend(3.5, .6, legend=c("Normal fit","Gaussian (ROT)", "Epanechnikov (ROT)", "Biweight (ROT)"),
+       col=c("forestgreen","deepskyblue", "violet", "steelblue4"), lty = c(1,1,1,6), lwd = c(3,3,5,3), cex=.6)
+
+# Given the analysis below, we just take the mean and the standard deviation from the Gaussian kernel density of valuations
+meanVal <- mean(dGAUS_val$x) # Location parameter
+sdVal <- sd(dGAUS_val$x)  # Scale parameter
+
+```
+
+Given the plot above, it seems to be that the empirical Gaussian kernel density is -again- the best fit for the estimated distribution of valuations. This is because, it captures very well the fall in the bids after the value of 2, and then the increase when these are close to 2.5. 
+
+Note that the Biweight kernel density also does a good job explaining this collapse, but once the histogram sharply falls (somewhere between 2.1 and 2.5), the Gaussian kernel density does it better: it closely follows the histogram. 
+
+In regards to the estimated location and scale parameter, from the Gaussian kernel density, these are `r round(meanVal, 2)` and `r round(sdVal, 2)`, respectively. Since we are simulating bids from a first price sealed bid, we should expect the mean of valuations to be higher than the mean of bids (`r round(mean(dt$bids), 2)`), as the theory predicts; so we are in the right track!
+
+## Question 7 (from the "followup.md" file)
+
+Comment: I did not understand what this part "... N=100 auction pairs" was refering to, so I did it in a different way. I think what follows is intuitive. As a summary, I drew values for each bidder and then I calculated the winning bid for each auction. I did this M=1,000 times for each case: 3 and 4 bidders. Finally, I took the average of the difference between the two cases in order to get the expected difference in the winning bid. 
+
+```{r q7 simulation}
+
+# Step 1: Approximate the recovered distribution of values using a log normal
+fitLN_val <- fitdistr(vHat, "lognormal") 
+
+#Step 2: Use these estimated log normal parameters to recompute the bid function for auctions with 3 and 4 bidders (It is a function called "sBid")
+
+F_lN <- function(INPUT){plnorm(INPUT, fitLN_val$estimate[1], fitLN_val$estimate[2])} 
+
+sBid <- function(VALUATIONS, NUMBER_OF_BIDDERS){
+  
+  rVal <- rlnorm(seq(0,5,length=nBids), fitLN_val$estimate[1], fitLN_val$estimate[2])  
+  sVal <- sort(sample(rVal, NUMBER_OF_BIDDERS, replace = TRUE, prob = NULL)) # Sample valuations of NUMBER_OF_BIDDERS bidders
+ 
+  eqBids <- vector("numeric", NUMBER_OF_BIDDERS) ## Initializing vector of equilibrium bids
+   for (i in 1:NUMBER_OF_BIDDERS){
+  eqBids[i] <- sVal[i]-(1/(F_lN(sVal[i])^(NUMBER_OF_BIDDERS-1)))*
+    integrate(function(INPUT) F_lN(INPUT)^NUMBER_OF_BIDDERS,min(sVal),sVal[i])$value
+   }
+  
+  wBid <- max(eqBids) # Returns the winning bid
+  return(wBid)
+}
+
+# Step 3: Simulate 1,000 times the equilibrium bids for auctions with 3 and 4 bidders, respectively. 
+
+M <- 1000 # # of simulations
+wBid3 <- vector("numeric", M) # Initializing vector of winning bids for auctions with 3 bidders
+wBid4 <- vector("numeric", M) # Initializing vector of winning bids for auctions with 4 bidders
+
+for (i in 1:M){
+  wBid3[i] <- sBid(vHat,3)  
+  wBid4[i] <- sBid(vHat,4)  
+}
+  
+# Step 4: Computes the expected difference in the winning bid going from 3 to 4 bidders
+
+ theta <- wBid4-wBid3
+ mean_theta <- mean(theta)
+
+# Step 5: Confidence interval (I am assuming a normal distribution) 
+
+ error <- qnorm(0.95)*sd(theta)/sqrt(M)
+ CI_theta <- c(mean_theta-error, mean_theta+error)
+
+```
+
+The expected difference in the winning bid ($E(\theta)$) going from 3 to 4 bidders is  `r round(mean_theta, 2)`, and its confidence interval is [`r round(CI_theta[1], 2)`, `r round(CI_theta[2], 2)`].
+
+
+
