@@ -1,0 +1,54 @@
+clear all
+close all
+
+bids = csvread('bids1.csv',0,0);
+histogram(bids,8,'Normalization','probability');
+x = sort(bids);
+p = normpdf(x,mean(bids),var(bids)^(1/2));
+hold on
+plot(x,p/2.5,'Color','r','LineStyle','-');
+
+bw = 0.2;
+
+pdEp = fitdist(bids,'kernel','Kernel','epanechnikov','BandWidth',bw);
+pEp = pdf(pdEp,x);
+plot(x,pEp/2.5,'Color','g','LineStyle','-.');
+
+pdGa = fitdist(bids,'kernel','BandWidth',bw);
+pGa = pdf(pdGa,x);
+plot(x,pGa/2.5,'Color','b','LineStyle','--');
+
+hname = {'histogram','normal' 'epanechnikov' 'gaussian'};
+legend(hname);
+
+%% Cross Validation
+
+s = rng;
+save('randomiser.mat','s')
+load('randomiser.mat');
+rng(s);
+bidsRand = bids(randperm(length(bids)));
+k = 10; % # of bids in CV
+
+func = @(bw) kCVfun(bidsRand,bw,k);
+
+options = optimset('MaxFunEval', 1e6, 'MaxIter', 1e5, 'TolFun', 1e-10);
+bwEst = fminsearch(func,0.1,options);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
