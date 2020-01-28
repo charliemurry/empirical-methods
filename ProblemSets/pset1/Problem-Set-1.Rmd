@@ -1,0 +1,262 @@
+---
+title: "Problem Set 1"
+author: "Aastha"
+date: "1/27/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r }
+library(tidyverse)
+library(readr)
+library(ks)
+library(kdensity)
+library(data.table)
+library(fitdistrplus)
+library(ggplot2)
+library(gridExtra)
+library(ggpubr)
+
+setwd("~/github/empirical-methods/ProblemSets/pset1")
+
+dt <- read_csv("bids1.csv", col_names = c("bids"))
+```
+# Question 1
+
+### Histogram of the bids
+```{r}
+ggplot (data = dt, aes(dt$bids)) + geom_histogram(binwidth = 0.25)
+
+
+
+```
+
+
+```{r , echo=FALSE}
+qplot(dt$bids, geom="histogram", binwidth = 0.25,main = "Histogram of bid values", xlab = "Bid values", ylab = "Frequency",  position = "center", col=I("red"), fill = I("white"))
+
+```
+# Question 2
+
+1. Estimating bids assuming normal distribution:
+
+```{r}
+fit_normal <- fitdist(dt$bids, "norm")
+class(fit_normal)
+#plot(fit_normal)
+denscomp(fit_normal, xlab = "Bid values")
+
+```
+Alternate way for normal density:
+
+```{r}
+mean(dt$bids)# 2.19
+sd(dt$bids)# 0.74
+
+density_normal = dnorm(dt$bids, mean = mean(dt$bids), sd =sd(dt$bids))
+plot(dt$bids, density_normal, xlab = "Bid values" , ylab = "density")
+
+```
+
+2. Estimating bids using a Guassian Kernel
+
+
+```{r}
+
+density_guassian <- density(dt$bids, bw = "nrd0", adjust = 1,
+        kernel = "gaussian",
+        weights = NULL, window = kernel, width,
+        give.Rkern = FALSE,
+        n = 512,  cut = 3, na.rm = FALSE)
+
+plot(density_guassian, xlab="Bid values", main = "Gaussian Kernel")
+
+```
+
+
+
+3. Estimating bids uding Epanechnikov Kernel
+
+
+```{r}
+density_epanechnikov <- density(dt$bids, bw = "nrd0", adjust = 1,
+                                kernel = "epanechnikov",
+                                weights = NULL, window = kernel, width,
+                                give.Rkern = FALSE,
+                                n = 512,  cut = 3, na.rm = FALSE)
+
+
+
+plot(density_epanechnikov, xlab="Bid values", main = "Epanechnikov Kernel")
+
+
+```
+
+
+# Question 2 
+
+Using a least-squares cross-validation to pick the bandwidth for the Epanechnikov kernel
+
+
+```{r}
+bids <- dt$bids
+X = bids
+
+# optimal bandwidth
+
+IQR(X)
+sd(X)
+opt_h = 0.9*sd(X)*length(X)^(-1/5) # optimal h
+
+
+J=function(h){
+   fhat=Vectorize(function(x) density(X,from=x,to=x,n=1,bw=h)$y)
+   fhati=Vectorize(function(i) density(X[-i],from=X[i],to=X[i],n=1,bw=h)$y)
+   F=fhati(1:length(X))
+   return(integrate(function(x) fhat(x)^2,-Inf,Inf)$value-2*mean(F))
+   }
+
+vx=seq(0.1,1,by=.01)
+vy=Vectorize(J)(vx)
+df=data.frame(vx,vy)
+qplot(vx,vy,geom="line",data=df)
+
+optimize(J,interval=c(.1,1)) 
+
+
+````
+We obtain optimal h = 0.317 by least squares cross validation, using which we obtain the following density function.
+
+
+```{r}
+density_epanechnikov_CV <- density(dt$bids, bw=0.31, adjust = 1, 
+                   kernel = c("epanechnikov"),
+                   weights = NULL)
+
+plot(density_epanechnikov_CV,xlab="Bid values", main = "Epanechnikov kernel after cross validation" )
+
+
+````
+
+# Question 3
+Trying to find the best fit of density for the data
+```{r}
+
+density_normal1 <- rnorm(length(dt$bids), mean(dt$bids), sd(dt$bids))
+
+hist(dt$bids, breaks = seq(0.5,4,0.25), freq = FALSE, main = "Comparing different density functions", xlab = "Bid values")
+lines(density(density_normal1, adjust = 2), col ="chocolate", lwd =2) ### some problem here
+lines(density_epanechnikov, col="red", lwd = 2)
+lines(density_epanechnikov_CV, col ="green", lwd =2)
+lines(density_guassian, col = "blue", lwd =2)
+
+legend(1, 95, legend=c("normal", "epanechnikov", "epanechnikov_CV", "gaussian"),
+       col=c("chocolate", "red", "green", "blue"), lty=1:2, cex=0.8)
+
+```
+chocolate = normal distribution, red = epanechnikov, green = epnechnikov after cross validation, blue = gaussian
+
+# Question 4
+
+```{r}
+
+class(density_epanechnikov_CV)
+max(density_epanechnikov_CV$y)
+sum(density_epanechnikov_CV$y)
+#density_epanechnikov_CV = density_epanechnikov_CV$y/sum(density_epanechnikov_CV$y)
+
+library(spatstat)
+#density_epanechnikov_CV <- as.function(density_epanechnikov_CV)
+cdf = CDF(density_epanechnikov_CV)
+plot(cdf)
+
+```
+
+```{r}
+
+# calculating cdf and pdf g_hat and G_hat
+g_hat <- approxfun(density_epanechnikov_CV)
+yGb <- c(cumsum(density_epanechnikov_CV$y))
+xGb <- c(density_epanechnikov_CV$x)
+Gb  <- data.frame(yGb,xGb)
+G_hat <- approxfun(Gb)
+
+
+v_hat <- function(b) {
+  results <-    b + (1/(2))*(G_hat(b)/g_hat(b)) # using the GPV formula
+  return(results)
+}
+vHat <- v_hat(dt$bids)
+min(vHat)
+max(vHat)
+
+
+
+```
+
+# Question 5
+
+Estimating the values "v" using epanechnikov kernel
+
+
+```{r}
+#hist(vHat, breaks = seq(2,10,0.5), freq = FALSE)
+density_vHat = density(vHat, bw="nrd0", adjust = 1, 
+                       kernel = c("epanechnikov"),
+                       weights = NULL)
+
+
+hist(vHat, breaks = seq(2,10,0.5), freq = FALSE, main = "Distribution of bid values")
+lines(density_vHat, col = "red")
+
+
+```
+
+
+#Question 6
+
+
+```{r}
+fitg <- fitdist(vHat, "gamma") # loglikelihood -437
+fitln <- fitdist(vHat, "lnorm")
+fitw <- fitdist(vHat, "weibull")
+
+
+summary(fitg)
+
+
+hist(vHat, breaks = seq(2,10,0.5), freq = FALSE, main = "Distribution of bid values")
+lines(density_vHat, col = "red")
+
+
+
+```
+
+```{r}
+denscomp(fitg)
+lines(density_vHat, col = "blue")
+
+denscomp(fitln)
+lines(density_vHat, col = "purple")
+
+denscomp(fitw)
+lines(density_vHat, col = "green")
+
+
+```
+
+
+```{r}
+
+summary(fitg)
+summary(fitln)
+summary(fitw)
+
+```
+
+The distribution closely represents the lognormal distribution as it appears from the above comparsion of density graphs. 
