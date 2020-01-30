@@ -1,9 +1,9 @@
 \input{../slideHeader}
 
 \title{Model Selection}
-\author{Richard L. Sweeney}
+\author{Charlie Murry \& Richard L. Sweeney}
 \institute{based on slides by Chris Conlon}
-\date{Empirical Methods \\ Spring 2019}
+\date{Empirical Methods \\ Spring 2020}
 
 \setbeamerfont{equation}{size=\tiny}
 \DeclareMathSizes{10}{10}{6}{6} 
@@ -191,6 +191,7 @@ What are people likely doing in practice:
 \item Start with all possible $x$ variables and drop those where $t$-statistics were insignificant.
 \item These procedures actually make some sense if the columns of $X$ are \alert{linearly independent} or \alert{orthogonal}.
 \item In practice our regressors are often correlated (sometimes highly so).
+\item So then it matters which variables you drop first, etc. 
 \end{itemize}
 \end{frame}
     
@@ -215,7 +216,7 @@ What are people likely doing in practice:
 \frametitle{Minimizing SSR: all possible regressions}
 \vspace{-10pt}
 \begin{center}
-\includegraphics[width=\textwidth]{./resources/subsetsaic}
+\includegraphics[scale = 0.75]{./resources/subsetsaic}
 \end{center}
 \end{frame}
 
@@ -297,7 +298,7 @@ As an alternative consider:
 \begin{frame}
 \frametitle{Stepwise selection proedures}
 \begin{center}
-\includegraphics[width=3.5in]{./resources/subsetstepwise}
+\includegraphics[height=0.85\textheight]{./resources/subsetstepwise}
 \end{center}
 \end{frame}
 
@@ -401,7 +402,7 @@ Suppose we fit a regression model and penalized extra variables all in one go, w
    \frametitle{Principal Components}
    \vspace{-10pt}
     \begin{center}
-    \includegraphics[width=\textwidth]{./resources/princompfig}
+    \includegraphics[height=0.85\textheight]{./resources/princompfig}
     \end{center}
 \end{frame}
     
@@ -410,7 +411,7 @@ Suppose we fit a regression model and penalized extra variables all in one go, w
     \frametitle{Ridge Path}
     \vspace{-15pt}
     \begin{center}
-    \includegraphics[width=.85\textwidth]{./resources/ridgepath}
+    \includegraphics[height=0.85\textheight]{./resources/ridgepath}
     \end{center}
 \end{frame}
     
@@ -448,14 +449,14 @@ But... is choosing $\lambda$ any easier than choosing $p$?
 \frametitle{LASSO Path}
 \vspace{-25pt}
 \begin{center}
-\includegraphics[width=.85\textwidth]{./resources/lassopath}
+\includegraphics[height=0.85\textheight]{./resources/lassopath}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{LASSO vs Ridge}
 \begin{center}
-\includegraphics[width=3.5in]{./resources/geometry}
+\includegraphics[height=0.85\textheight]{./resources/geometry}
 \end{center}
 \end{frame}
 
@@ -485,7 +486,7 @@ We can actually combine them using \alert{elastic net regression}:
 \begin{frame}
 \frametitle{LASSO vs. Ridge}
 \begin{center}
-\includegraphics[width=3.5in]{./resources/orthcompare}
+\includegraphics[height=0.85\textheight]{./resources/orthcompare}
 \end{center}
 \end{frame}
 
