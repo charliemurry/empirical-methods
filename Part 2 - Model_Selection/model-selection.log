@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  30 JAN 2020 14:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 FEB 2020 13:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1400,7 +1400,11 @@ Overfull \hbox (0.99078pt too wide) has occurred while \output is active
 File: ./resources/princomp1.pdf Graphic file (type pdf)
 <use ./resources/princomp1.pdf>
 Package pdftex.def Info: ./resources/princomp1.pdf  used on input line 639.
-(pdftex.def)             Requested size: 252.94499pt x 186.55577pt.
+(pdftex.def)             Requested size: 281.32578pt x 207.4831pt.
+
+Overfull \vbox (12.36592pt too high) detected at line 639
+ []
+
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1413,9 +1417,9 @@ Overfull \hbox (0.99078pt too wide) has occurred while \output is active
 File: ./resources/princomp2.pdf Graphic file (type pdf)
 <use ./resources/princomp2.pdf>
 Package pdftex.def Info: ./resources/princomp2.pdf  used on input line 646.
-(pdftex.def)             Requested size: 252.94499pt x 233.744pt.
+(pdftex.def)             Requested size: 224.52612pt x 207.4831pt.
 
-Overfull \vbox (38.62683pt too high) detected at line 646
+Overfull \vbox (12.36592pt too high) detected at line 646
  []
 
 
@@ -1437,9 +1441,9 @@ Overfull \hbox (0.99078pt too wide) has occurred while \output is active
 File: ./resources/pcrridge.pdf Graphic file (type pdf)
 <use ./resources/pcrridge.pdf>
 Package pdftex.def Info: ./resources/pcrridge.pdf  used on input line 673.
-(pdftex.def)             Requested size: 381.79135pt x 233.43182pt.
+(pdftex.def)             Requested size: 339.37639pt x 207.4831pt.
 
-Overfull \vbox (38.31465pt too high) detected at line 673
+Overfull \vbox (12.36592pt too high) detected at line 673
  []
 
 
@@ -1503,11 +1507,7 @@ Overfull \hbox (0.99078pt too wide) has occurred while \output is active
 File: ./resources/comparisons.pdf Graphic file (type pdf)
 <use ./resources/comparisons.pdf>
 Package pdftex.def Info: ./resources/comparisons.pdf  used on input line 788.
-(pdftex.def)             Requested size: 381.79135pt x 330.07158pt.
-
-Overfull \vbox (119.9544pt too high) detected at line 788
- []
-
+(pdftex.def)             Requested size: 239.99176pt x 207.4831pt.
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1521,9 +1521,14 @@ File: ./resources/regressiontable.pdf Graphic file (type pdf)
 <use ./resources/regressiontable.pdf>
 Package pdftex.def Info: ./resources/regressiontable.pdf  used on input line 79
 5.
-(pdftex.def)             Requested size: 381.79135pt x 205.48027pt.
+(pdftex.def)             Requested size: 385.55328pt x 207.4831pt.
 
-Overfull \vbox (10.3631pt too high) detected at line 795
+Overfull \hbox (3.76193pt too wide) in paragraph at lines 795--795
+ [] 
+ []
+
+
+Overfull \vbox (25.96593pt too high) detected at line 795
  []
 
 
@@ -1539,9 +1544,9 @@ File: ./resources/ESLshrinkpathPositive.png Graphic file (type png)
 <use ./resources/ESLshrinkpathPositive.png>
 Package pdftex.def Info: ./resources/ESLshrinkpathPositive.png  used on input l
 ine 802.
-(pdftex.def)             Requested size: 381.79135pt x 279.28519pt.
+(pdftex.def)             Requested size: 283.65059pt x 207.4831pt.
 
-Overfull \vbox (84.16801pt too high) detected at line 802
+Overfull \vbox (12.36592pt too high) detected at line 802
  []
 
 
@@ -1557,11 +1562,7 @@ File: ./resources/ESLshrinkpathNegative.png Graphic file (type png)
 <use ./resources/ESLshrinkpathNegative.png>
 Package pdftex.def Info: ./resources/ESLshrinkpathNegative.png  used on input l
 ine 809.
-(pdftex.def)             Requested size: 381.79135pt x 315.1365pt.
-
-Overfull \vbox (79.73096pt too high) detected at line 809
- []
-
+(pdftex.def)             Requested size: 251.36827pt x 207.4831pt.
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1582,11 +1583,7 @@ File: ./resources/BaxterAbstract.png Graphic file (type png)
 <use ./resources/BaxterAbstract.png>
 Package pdftex.def Info: ./resources/BaxterAbstract.png  used on input line 833
 .
-(pdftex.def)             Requested size: 226.57362pt x 244.09601pt.
-
-Overfull \vbox (8.69046pt too high) detected at line 833
- []
-
+(pdftex.def)             Requested size: 192.5885pt x 207.4831pt.
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1599,11 +1596,7 @@ Overfull \hbox (0.99078pt too wide) has occurred while \output is active
 File: ./resources/BaxterOLS.png Graphic file (type png)
 <use ./resources/BaxterOLS.png>
 Package pdftex.def Info: ./resources/BaxterOLS.png  used on input line 840.
-(pdftex.def)             Requested size: 160.84874pt x 244.09601pt.
-
-Overfull \vbox (8.69046pt too high) detected at line 840
- []
-
+(pdftex.def)             Requested size: 136.71802pt x 207.4831pt.
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1617,11 +1610,7 @@ File: ./resources/BaxterLassoPath.png Graphic file (type png)
 <use ./resources/BaxterLassoPath.png>
 Package pdftex.def Info: ./resources/BaxterLassoPath.png  used on input line 84
 7.
-(pdftex.def)             Requested size: 256.26775pt x 244.09601pt.
-
-Overfull \vbox (8.69046pt too high) detected at line 847
- []
-
+(pdftex.def)             Requested size: 217.83403pt x 207.4831pt.
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1634,11 +1623,7 @@ Overfull \hbox (0.99078pt too wide) has occurred while \output is active
 File: ./resources/QJELevitt.png Graphic file (type png)
 <use ./resources/QJELevitt.png>
 Package pdftex.def Info: ./resources/QJELevitt.png  used on input line 856.
-(pdftex.def)             Requested size: 381.79135pt x 309.96648pt.
-
-Overfull \vbox (74.56093pt too high) detected at line 856
- []
-
+(pdftex.def)             Requested size: 255.56139pt x 207.4831pt.
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1652,11 +1637,7 @@ File: ./resources/QJELevittScatter.png Graphic file (type png)
 <use ./resources/QJELevittScatter.png>
 Package pdftex.def Info: ./resources/QJELevittScatter.png  used on input line 8
 63.
-(pdftex.def)             Requested size: 381.79135pt x 281.68741pt.
-
-Overfull \vbox (46.28186pt too high) detected at line 863
- []
-
+(pdftex.def)             Requested size: 281.21558pt x 207.4831pt.
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1670,11 +1651,7 @@ File: ./resources/QJELevittTable.png Graphic file (type png)
 <use ./resources/QJELevittTable.png>
 Package pdftex.def Info: ./resources/QJELevittTable.png  used on input line 870
 .
-(pdftex.def)             Requested size: 381.79135pt x 386.78145pt.
-
-Overfull \vbox (151.3759pt too high) detected at line 870
- []
-
+(pdftex.def)             Requested size: 204.80917pt x 207.4831pt.
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1695,7 +1672,7 @@ File: ./resources/BCHLevittVars.png Graphic file (type png)
 <use ./resources/BCHLevittVars.png>
 Package pdftex.def Info: ./resources/BCHLevittVars.png  used on input line 890.
 
-(pdftex.def)             Requested size: 381.79135pt x 225.64445pt.
+(pdftex.def)             Requested size: 318.4389pt x 188.20265pt.
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1709,7 +1686,7 @@ File: ./resources/BCHLevittTable.png Graphic file (type png)
 <use ./resources/BCHLevittTable.png>
 Package pdftex.def Info: ./resources/BCHLevittTable.png  used on input line 897
 .
-(pdftex.def)             Requested size: 381.79135pt x 196.11801pt.
+(pdftex.def)             Requested size: 316.55687pt x 162.6071pt.
 
 Overfull \hbox (0.99078pt too wide) has occurred while \output is active
  []\T1/cmss/m/n/6 Orthogonality  
@@ -1853,7 +1830,7 @@ r/sfss1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/
 sfss1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sf
 sx1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt
 1095.pfb>
-Output written on model-selection.pdf (84 pages, 2753975 bytes).
+Output written on model-selection.pdf (84 pages, 2753951 bytes).
 PDF statistics:
  2705 PDF objects out of 2984 (max. 8388607)
  2403 compressed objects within 25 object streams
