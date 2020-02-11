@@ -1,7 +1,7 @@
 \input{../slideHeader}
 
 \title{Treatment Effects}
-\author{Richard L. Sweeney}
+\author{Charlie Murry and Richard L. Sweeney}
 \institute{based on slides by Chris Conlon}
 \date{Empirical Methods \\ Spring 2019}
 
@@ -51,7 +51,7 @@ This lecture draw heavily upon
 
 \begin{frame}
   \frametitle{Setup}
-  Typically attributed to Rubin
+  Typically attributed to Donald Rubin
   \begin{itemize}
   \item Observe $N$ units, indexed by $i$, drawn randomly from a larger population
   \item Postulate two \alert{potential outcomes} for each unit $\{Y_i(1), Y_i(0)\}$ depending on whether they receive treatment or not.
@@ -72,7 +72,13 @@ This lecture draw heavily upon
   \begin{itemize}
   \item Note there is already an important assumption embedded in this setup, the stable unit treatment value assumption (\alert{SUTVA}). 
   \item Assume that the outcome, in either state for unit $i$ does not depend on the assignment of other units.   
-  \item This is likely to fail in many important settings. Examples?
+  \item This is likely to fail in many important settings. 
+  \item Two ways to express this:
+  \begin{itemize}
+  	\item No interference.
+  	\item No hidden variations
+  \end{itemize}
+  \item Examples?
 \end{itemize}
 \end{frame}
 
@@ -249,10 +255,10 @@ But conditional independence does this for us:
 
 \begin{frame}
 \frametitle{A Matching Example}
-Here is an example where I found that matching was helpful in my own work with Julie Mortimer:
+Here is an example where matching was helpful from a paper by Prof. Mortimer:
 \begin{itemize}
-\item We ran a randomized experiment where we removed Snickers bars from around 60 vending machines in office buildings in downtown Chicago.
-\item We have a few possible control groups:
+\item She ran a randomized experiment where we removed Snickers bars from around 60 vending machines in office buildings in downtown Chicago.
+\item There are a few possible control groups:
 \begin{enumerate}
 \item Same vending machine in other weeks (captures heterogeneous tastes in the cross section)
 \item Other vending machines in the same week (might capture aggregate shocks, ad campaigns, etc.)
@@ -366,7 +372,7 @@ e(x) = Pr(W_i  = 1 | X_i) = E[W_i | X_i = x]
 \begin{frame}
   \frametitle{This suggests an attractive weigthing}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{./resources/imbensAEAPsWeight}
+    \includegraphics[scale=0.55]{./resources/imbensAEAPsWeight}
   \end{center}  
 \end{frame}
 
