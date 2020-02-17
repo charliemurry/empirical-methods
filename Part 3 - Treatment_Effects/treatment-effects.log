@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 FEB 2020 14:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 FEB 2020 17:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1080,9 +1080,9 @@ File: ./resources/DobbieAbstract.png Graphic file (type png)
 <use ./resources/DobbieAbstract.png>
 Package pdftex.def Info: ./resources/DobbieAbstract.png  used on input line 717
 .
-(pdftex.def)             Requested size: 343.60988pt x 271.8352pt.
+(pdftex.def)             Requested size: 246.83975pt x 195.27754pt.
 
-Overfull \vbox (76.71803pt too high) detected at line 717
+Overfull \vbox (0.16037pt too high) detected at line 717
  []
 
 [46
@@ -1092,9 +1092,9 @@ Overfull \vbox (76.71803pt too high) detected at line 717
 File: ./resources/DobbieStats.png Graphic file (type png)
 <use ./resources/DobbieStats.png>
 Package pdftex.def Info: ./resources/DobbieStats.png  used on input line 724.
-(pdftex.def)             Requested size: 343.60988pt x 306.9967pt.
+(pdftex.def)             Requested size: 218.58084pt x 195.27754pt.
 
-Overfull \vbox (111.87953pt too high) detected at line 724
+Overfull \vbox (0.16037pt too high) detected at line 724
  []
 
 [47
@@ -1105,9 +1105,9 @@ File: ./resources/DobbieFirstStageGraph.png Graphic file (type png)
 <use ./resources/DobbieFirstStageGraph.png>
 Package pdftex.def Info: ./resources/DobbieFirstStageGraph.png  used on input l
 ine 731.
-(pdftex.def)             Requested size: 343.60988pt x 236.08185pt.
+(pdftex.def)             Requested size: 284.21829pt x 195.27754pt.
 
-Overfull \vbox (40.96468pt too high) detected at line 731
+Overfull \vbox (0.16037pt too high) detected at line 731
  []
 
 [48
@@ -1118,9 +1118,9 @@ File: ./resources/DobbieRandomization.png Graphic file (type png)
 <use ./resources/DobbieRandomization.png>
 Package pdftex.def Info: ./resources/DobbieRandomization.png  used on input lin
 e 738.
-(pdftex.def)             Requested size: 343.60988pt x 426.68256pt.
+(pdftex.def)             Requested size: 157.26108pt x 195.27754pt.
 
-Overfull \vbox (231.56538pt too high) detected at line 738
+Overfull \vbox (0.16037pt too high) detected at line 738
  []
 
 [49
@@ -1131,9 +1131,9 @@ File: ./resources/DobbieResults.png Graphic file (type png)
 <use ./resources/DobbieResults.png>
 Package pdftex.def Info: ./resources/DobbieResults.png  used on input line 745.
 
-(pdftex.def)             Requested size: 343.60988pt x 311.27513pt.
+(pdftex.def)             Requested size: 215.5581pt x 195.27754pt.
 
-Overfull \vbox (116.15796pt too high) detected at line 745
+Overfull \vbox (0.16037pt too high) detected at line 745
  []
 
 [50
@@ -1162,9 +1162,9 @@ File: ./resources/DobbieComplierStats.png Graphic file (type png)
 <use ./resources/DobbieComplierStats.png>
 Package pdftex.def Info: ./resources/DobbieComplierStats.png  used on input lin
 e 764.
-(pdftex.def)             Requested size: 343.60988pt x 300.22568pt.
+(pdftex.def)             Requested size: 223.49672pt x 195.27754pt.
 
-Overfull \vbox (127.43715pt too high) detected at line 764
+Overfull \vbox (22.48901pt too high) detected at line 764
  []
 
 [53
@@ -1192,12 +1192,8 @@ Overfull \vbox (28.71614pt too high) detected at line 779
 File: ./resources/StockNBERIV.png Graphic file (type png)
 <use ./resources/StockNBERIV.png>
 Package pdftex.def Info: ./resources/StockNBERIV.png  used on input line 813.
-(pdftex.def)             Requested size: 381.79135pt x 285.7618pt.
-
-Overfull \vbox (60.35625pt too high) detected at line 813
- []
-
-[58
+(pdftex.def)             Requested size: 260.90457pt x 195.27754pt.
+ [58
 
  <./resources/StockNBERIV.png>]
 <./resources/StockNBER2sls.png, id=1270, 730.98094pt x 532.99126pt>
@@ -1205,12 +1201,8 @@ File: ./resources/StockNBER2sls.png Graphic file (type png)
 <use ./resources/StockNBER2sls.png>
 Package pdftex.def Info: ./resources/StockNBER2sls.png  used on input line 820.
 
-(pdftex.def)             Requested size: 381.79135pt x 278.3851pt.
-
-Overfull \vbox (52.97955pt too high) detected at line 820
- []
-
-[59
+(pdftex.def)             Requested size: 267.81525pt x 195.27754pt.
+ [59
 
  <./resources/StockNBER2sls.png>] [60
 
@@ -1228,12 +1220,8 @@ File: ./resources/belloniTakingsResults.png Graphic file (type png)
 <use ./resources/belloniTakingsResults.png>
 Package pdftex.def Info: ./resources/belloniTakingsResults.png  used on input l
 ine 887.
-(pdftex.def)             Requested size: 381.79135pt x 390.08798pt.
-
-Overfull \vbox (184.97081pt too high) detected at line 887
- []
-
-[65
+(pdftex.def)             Requested size: 191.12001pt x 195.27754pt.
+ [65
 
  <./resources/belloniTakingsResults.png>] [66
 
@@ -1974,7 +1962,7 @@ s/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/
 type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
 pe1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
 1/public/cm-super/sftt1095.pfb>
-Output written on treatment-effects.pdf (162 pages, 4294929 bytes).
+Output written on treatment-effects.pdf (162 pages, 4294928 bytes).
 PDF statistics:
  3594 PDF objects out of 4296 (max. 8388607)
  3242 compressed objects within 33 object streams
