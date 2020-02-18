@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 FEB 2020 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 FEB 2020 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1252,9 +1252,9 @@ Overfull \vbox (32.72885pt too high) detected at line 924
 File: ./resources/ll-fig2.png Graphic file (type png)
 <use ./resources/ll-fig2.png>
 Package pdftex.def Info: ./resources/ll-fig2.png  used on input line 968.
-(pdftex.def)             Requested size: 381.79135pt x 250.91255pt.
+(pdftex.def)             Requested size: 297.13806pt x 195.27754pt.
 
-Overfull \vbox (55.79538pt too high) detected at line 968
+Overfull \vbox (0.16037pt too high) detected at line 968
  []
 
 [71
@@ -1265,9 +1265,9 @@ File: ./resources/CatteneoLocpoly.png Graphic file (type png)
 <use ./resources/CatteneoLocpoly.png>
 Package pdftex.def Info: ./resources/CatteneoLocpoly.png  used on input line 97
 4.
-(pdftex.def)             Requested size: 381.79135pt x 399.412pt.
+(pdftex.def)             Requested size: 186.66557pt x 195.27754pt.
 
-Overfull \vbox (204.29483pt too high) detected at line 974
+Overfull \vbox (0.16037pt too high) detected at line 974
  []
 
 [72
@@ -1277,9 +1277,9 @@ Overfull \vbox (204.29483pt too high) detected at line 974
 File: ./resources/CatteneoBias.png Graphic file (type png)
 <use ./resources/CatteneoBias.png>
 Package pdftex.def Info: ./resources/CatteneoBias.png  used on input line 980.
-(pdftex.def)             Requested size: 381.79135pt x 348.63855pt.
+(pdftex.def)             Requested size: 213.86223pt x 195.27754pt.
 
-Overfull \vbox (153.52138pt too high) detected at line 980
+Overfull \vbox (0.16037pt too high) detected at line 980
  []
 
 [73
@@ -1297,9 +1297,9 @@ File: ./resources/CatteneoRawScatter.png Graphic file (type png)
 <use ./resources/CatteneoRawScatter.png>
 Package pdftex.def Info: ./resources/CatteneoRawScatter.png  used on input line
  1041.
-(pdftex.def)             Requested size: 381.79135pt x 221.14459pt.
+(pdftex.def)             Requested size: 337.14804pt x 195.27754pt.
 
-Overfull \vbox (26.02742pt too high) detected at line 1041
+Overfull \vbox (0.16037pt too high) detected at line 1041
  []
 
 [77
@@ -1389,9 +1389,9 @@ Overfull \vbox (20.896pt too high) detected at line 1146
 File: ./resources/myDiD.png Graphic file (type png)
 <use ./resources/myDiD.png>
 Package pdftex.def Info: ./resources/myDiD.png  used on input line 1167.
-(pdftex.def)             Requested size: 343.60988pt x 253.05211pt.
+(pdftex.def)             Requested size: 265.15614pt x 195.27754pt.
 
-Overfull \vbox (57.93494pt too high) detected at line 1167
+Overfull \vbox (0.16037pt too high) detected at line 1167
  []
 
 [90
@@ -1401,24 +1401,16 @@ Overfull \vbox (57.93494pt too high) detected at line 1167
 File: ./resources/CKAbstract.png Graphic file (type png)
 <use ./resources/CKAbstract.png>
 Package pdftex.def Info: ./resources/CKAbstract.png  used on input line 1172.
-(pdftex.def)             Requested size: 381.79135pt x 222.91307pt.
-
-Overfull \vbox (15.7959pt too high) detected at line 1172
- []
-
-[91
+(pdftex.def)             Requested size: 334.46155pt x 195.27754pt.
+ [91
 
  <./resources/CKAbstract.png>]
 <./resources/CKSumStats.png, id=1944, 540.51938pt x 426.84468pt>
 File: ./resources/CKSumStats.png Graphic file (type png)
 <use ./resources/CKSumStats.png>
 Package pdftex.def Info: ./resources/CKSumStats.png  used on input line 1177.
-(pdftex.def)             Requested size: 381.79135pt x 301.5052pt.
-
-Overfull \vbox (94.38803pt too high) detected at line 1177
- []
-
-[92
+(pdftex.def)             Requested size: 247.2893pt x 195.27754pt.
+ [92
 
  <./resources/CKSumStats.png>]
 <./resources/CKwages.png, id=1965, 367.3725pt x 615.0478pt>
@@ -1962,7 +1954,7 @@ s/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/
 type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
 pe1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
 1/public/cm-super/sftt1095.pfb>
-Output written on treatment-effects.pdf (162 pages, 4294928 bytes).
+Output written on treatment-effects.pdf (162 pages, 4294941 bytes).
 PDF statistics:
  3594 PDF objects out of 4296 (max. 8388607)
  3242 compressed objects within 33 object streams
