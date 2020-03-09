@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 FEB 2020 14:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 FEB 2020 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1080,9 +1080,9 @@ File: ./resources/DobbieAbstract.png Graphic file (type png)
 <use ./resources/DobbieAbstract.png>
 Package pdftex.def Info: ./resources/DobbieAbstract.png  used on input line 717
 .
-(pdftex.def)             Requested size: 343.60988pt x 271.8352pt.
+(pdftex.def)             Requested size: 246.83975pt x 195.27754pt.
 
-Overfull \vbox (76.71803pt too high) detected at line 717
+Overfull \vbox (0.16037pt too high) detected at line 717
  []
 
 [46
@@ -1092,9 +1092,9 @@ Overfull \vbox (76.71803pt too high) detected at line 717
 File: ./resources/DobbieStats.png Graphic file (type png)
 <use ./resources/DobbieStats.png>
 Package pdftex.def Info: ./resources/DobbieStats.png  used on input line 724.
-(pdftex.def)             Requested size: 343.60988pt x 306.9967pt.
+(pdftex.def)             Requested size: 218.58084pt x 195.27754pt.
 
-Overfull \vbox (111.87953pt too high) detected at line 724
+Overfull \vbox (0.16037pt too high) detected at line 724
  []
 
 [47
@@ -1105,9 +1105,9 @@ File: ./resources/DobbieFirstStageGraph.png Graphic file (type png)
 <use ./resources/DobbieFirstStageGraph.png>
 Package pdftex.def Info: ./resources/DobbieFirstStageGraph.png  used on input l
 ine 731.
-(pdftex.def)             Requested size: 343.60988pt x 236.08185pt.
+(pdftex.def)             Requested size: 284.21829pt x 195.27754pt.
 
-Overfull \vbox (40.96468pt too high) detected at line 731
+Overfull \vbox (0.16037pt too high) detected at line 731
  []
 
 [48
@@ -1118,9 +1118,9 @@ File: ./resources/DobbieRandomization.png Graphic file (type png)
 <use ./resources/DobbieRandomization.png>
 Package pdftex.def Info: ./resources/DobbieRandomization.png  used on input lin
 e 738.
-(pdftex.def)             Requested size: 343.60988pt x 426.68256pt.
+(pdftex.def)             Requested size: 157.26108pt x 195.27754pt.
 
-Overfull \vbox (231.56538pt too high) detected at line 738
+Overfull \vbox (0.16037pt too high) detected at line 738
  []
 
 [49
@@ -1131,9 +1131,9 @@ File: ./resources/DobbieResults.png Graphic file (type png)
 <use ./resources/DobbieResults.png>
 Package pdftex.def Info: ./resources/DobbieResults.png  used on input line 745.
 
-(pdftex.def)             Requested size: 343.60988pt x 311.27513pt.
+(pdftex.def)             Requested size: 215.5581pt x 195.27754pt.
 
-Overfull \vbox (116.15796pt too high) detected at line 745
+Overfull \vbox (0.16037pt too high) detected at line 745
  []
 
 [50
@@ -1162,9 +1162,9 @@ File: ./resources/DobbieComplierStats.png Graphic file (type png)
 <use ./resources/DobbieComplierStats.png>
 Package pdftex.def Info: ./resources/DobbieComplierStats.png  used on input lin
 e 764.
-(pdftex.def)             Requested size: 343.60988pt x 300.22568pt.
+(pdftex.def)             Requested size: 223.49672pt x 195.27754pt.
 
-Overfull \vbox (127.43715pt too high) detected at line 764
+Overfull \vbox (22.48901pt too high) detected at line 764
  []
 
 [53
@@ -1192,12 +1192,8 @@ Overfull \vbox (28.71614pt too high) detected at line 779
 File: ./resources/StockNBERIV.png Graphic file (type png)
 <use ./resources/StockNBERIV.png>
 Package pdftex.def Info: ./resources/StockNBERIV.png  used on input line 813.
-(pdftex.def)             Requested size: 381.79135pt x 285.7618pt.
-
-Overfull \vbox (60.35625pt too high) detected at line 813
- []
-
-[58
+(pdftex.def)             Requested size: 260.90457pt x 195.27754pt.
+ [58
 
  <./resources/StockNBERIV.png>]
 <./resources/StockNBER2sls.png, id=1270, 730.98094pt x 532.99126pt>
@@ -1205,12 +1201,8 @@ File: ./resources/StockNBER2sls.png Graphic file (type png)
 <use ./resources/StockNBER2sls.png>
 Package pdftex.def Info: ./resources/StockNBER2sls.png  used on input line 820.
 
-(pdftex.def)             Requested size: 381.79135pt x 278.3851pt.
-
-Overfull \vbox (52.97955pt too high) detected at line 820
- []
-
-[59
+(pdftex.def)             Requested size: 267.81525pt x 195.27754pt.
+ [59
 
  <./resources/StockNBER2sls.png>] [60
 
@@ -1228,12 +1220,8 @@ File: ./resources/belloniTakingsResults.png Graphic file (type png)
 <use ./resources/belloniTakingsResults.png>
 Package pdftex.def Info: ./resources/belloniTakingsResults.png  used on input l
 ine 887.
-(pdftex.def)             Requested size: 381.79135pt x 390.08798pt.
-
-Overfull \vbox (184.97081pt too high) detected at line 887
- []
-
-[65
+(pdftex.def)             Requested size: 191.12001pt x 195.27754pt.
+ [65
 
  <./resources/belloniTakingsResults.png>] [66
 
@@ -1264,9 +1252,9 @@ Overfull \vbox (32.72885pt too high) detected at line 924
 File: ./resources/ll-fig2.png Graphic file (type png)
 <use ./resources/ll-fig2.png>
 Package pdftex.def Info: ./resources/ll-fig2.png  used on input line 968.
-(pdftex.def)             Requested size: 381.79135pt x 250.91255pt.
+(pdftex.def)             Requested size: 297.13806pt x 195.27754pt.
 
-Overfull \vbox (55.79538pt too high) detected at line 968
+Overfull \vbox (0.16037pt too high) detected at line 968
  []
 
 [71
@@ -1277,9 +1265,9 @@ File: ./resources/CatteneoLocpoly.png Graphic file (type png)
 <use ./resources/CatteneoLocpoly.png>
 Package pdftex.def Info: ./resources/CatteneoLocpoly.png  used on input line 97
 4.
-(pdftex.def)             Requested size: 381.79135pt x 399.412pt.
+(pdftex.def)             Requested size: 186.66557pt x 195.27754pt.
 
-Overfull \vbox (204.29483pt too high) detected at line 974
+Overfull \vbox (0.16037pt too high) detected at line 974
  []
 
 [72
@@ -1289,9 +1277,9 @@ Overfull \vbox (204.29483pt too high) detected at line 974
 File: ./resources/CatteneoBias.png Graphic file (type png)
 <use ./resources/CatteneoBias.png>
 Package pdftex.def Info: ./resources/CatteneoBias.png  used on input line 980.
-(pdftex.def)             Requested size: 381.79135pt x 348.63855pt.
+(pdftex.def)             Requested size: 213.86223pt x 195.27754pt.
 
-Overfull \vbox (153.52138pt too high) detected at line 980
+Overfull \vbox (0.16037pt too high) detected at line 980
  []
 
 [73
@@ -1309,9 +1297,9 @@ File: ./resources/CatteneoRawScatter.png Graphic file (type png)
 <use ./resources/CatteneoRawScatter.png>
 Package pdftex.def Info: ./resources/CatteneoRawScatter.png  used on input line
  1041.
-(pdftex.def)             Requested size: 381.79135pt x 221.14459pt.
+(pdftex.def)             Requested size: 337.14804pt x 195.27754pt.
 
-Overfull \vbox (26.02742pt too high) detected at line 1041
+Overfull \vbox (0.16037pt too high) detected at line 1041
  []
 
 [77
@@ -1387,12 +1375,8 @@ Overfull \vbox (15.16483pt too high) detected at line 1066
 File: ./resources/gasTaxes.png Graphic file (type png)
 <use ./resources/gasTaxes.png>
 Package pdftex.def Info: ./resources/gasTaxes.png  used on input line 1146.
-(pdftex.def)             Requested size: 228.86893pt x 256.30154pt.
-
-Overfull \vbox (20.896pt too high) detected at line 1146
- []
-
-[88
+(pdftex.def)             Requested size: 198.43785pt x 222.2263pt.
+ [88
 
  <./resources/gasTaxes.png>] [89
 
@@ -1401,9 +1385,9 @@ Overfull \vbox (20.896pt too high) detected at line 1146
 File: ./resources/myDiD.png Graphic file (type png)
 <use ./resources/myDiD.png>
 Package pdftex.def Info: ./resources/myDiD.png  used on input line 1167.
-(pdftex.def)             Requested size: 343.60988pt x 253.05211pt.
+(pdftex.def)             Requested size: 265.15614pt x 195.27754pt.
 
-Overfull \vbox (57.93494pt too high) detected at line 1167
+Overfull \vbox (0.16037pt too high) detected at line 1167
  []
 
 [90
@@ -1413,36 +1397,24 @@ Overfull \vbox (57.93494pt too high) detected at line 1167
 File: ./resources/CKAbstract.png Graphic file (type png)
 <use ./resources/CKAbstract.png>
 Package pdftex.def Info: ./resources/CKAbstract.png  used on input line 1172.
-(pdftex.def)             Requested size: 381.79135pt x 222.91307pt.
-
-Overfull \vbox (15.7959pt too high) detected at line 1172
- []
-
-[91
+(pdftex.def)             Requested size: 334.46155pt x 195.27754pt.
+ [91
 
  <./resources/CKAbstract.png>]
 <./resources/CKSumStats.png, id=1944, 540.51938pt x 426.84468pt>
 File: ./resources/CKSumStats.png Graphic file (type png)
 <use ./resources/CKSumStats.png>
 Package pdftex.def Info: ./resources/CKSumStats.png  used on input line 1177.
-(pdftex.def)             Requested size: 381.79135pt x 301.5052pt.
-
-Overfull \vbox (94.38803pt too high) detected at line 1177
- []
-
-[92
+(pdftex.def)             Requested size: 247.2893pt x 195.27754pt.
+ [92
 
  <./resources/CKSumStats.png>]
 <./resources/CKwages.png, id=1965, 367.3725pt x 615.0478pt>
 File: ./resources/CKwages.png Graphic file (type png)
 <use ./resources/CKwages.png>
 Package pdftex.def Info: ./resources/CKwages.png  used on input line 1182.
-(pdftex.def)             Requested size: 160.38312pt x 268.5071pt.
-
-Overfull \vbox (21.10155pt too high) detected at line 1182
- []
-
-[93
+(pdftex.def)             Requested size: 138.50989pt x 231.89046pt.
+ [93
 
  <./resources/CKwages.png>]
 <./resources/CKResults.png, id=1986, 669.2503pt x 458.46281pt>
@@ -1478,9 +1450,9 @@ File: ./resources/muehlegger_dying.png Graphic file (type png)
 <use ./resources/muehlegger_dying.png>
 Package pdftex.def Info: ./resources/muehlegger_dying.png  used on input line 1
 304.
-(pdftex.def)             Requested size: 381.79135pt x 270.80061pt.
+(pdftex.def)             Requested size: 275.31866pt x 195.27754pt.
 
-Overfull \vbox (75.68344pt too high) detected at line 1304
+Overfull \vbox (0.16037pt too high) detected at line 1304
  []
 
 [101
@@ -1500,169 +1472,155 @@ Overfull \vbox (75.68344pt too high) detected at line 1304
 ]
 [108
 
+] [109
+
 ]
-<./resources/ADHCAvsUS.png, id=2286, 583.42969pt x 486.31688pt>
+<./resources/ADHCAvsUS.png, id=2306, 583.42969pt x 486.31688pt>
 File: ./resources/ADHCAvsUS.png Graphic file (type png)
 <use ./resources/ADHCAvsUS.png>
-Package pdftex.def Info: ./resources/ADHCAvsUS.png  used on input line 1400.
-(pdftex.def)             Requested size: 324.52498pt x 270.51013pt.
+Package pdftex.def Info: ./resources/ADHCAvsUS.png  used on input line 1418.
+(pdftex.def)             Requested size: 248.91133pt x 207.4831pt.
 
-Overfull \vbox (75.39296pt too high) detected at line 1400
- []
-
-[109
-
- <./resources/ADHCAvsUS.png>]
-<./resources/ADHWeights.png, id=2308, 370.38374pt x 459.21562pt>
-File: ./resources/ADHWeights.png Graphic file (type png)
-<use ./resources/ADHWeights.png>
-Package pdftex.def Info: ./resources/ADHWeights.png  used on input line 1408.
-(pdftex.def)             Requested size: 187.03383pt x 231.89046pt.
-
-Overfull \vbox (21.77328pt too high) detected at line 1408
+Overfull \vbox (12.36592pt too high) detected at line 1418
  []
 
 [110
 
+ <./resources/ADHCAvsUS.png>]
+<./resources/ADHWeights.png, id=2327, 370.38374pt x 459.21562pt>
+File: ./resources/ADHWeights.png Graphic file (type png)
+<use ./resources/ADHWeights.png>
+Package pdftex.def Info: ./resources/ADHWeights.png  used on input line 1426.
+(pdftex.def)             Requested size: 167.34932pt x 207.4831pt.
+ [111
+
  <./resources/ADHWeights.png>]
-<./resources/ADHSumStats.png, id=2329, 384.6872pt x 247.67531pt>
+<./resources/ADHSumStats.png, id=2348, 384.6872pt x 247.67531pt>
 File: ./resources/ADHSumStats.png Graphic file (type png)
 <use ./resources/ADHSumStats.png>
-Package pdftex.def Info: ./resources/ADHSumStats.png  used on input line 1415.
+Package pdftex.def Info: ./resources/ADHSumStats.png  used on input line 1433.
 (pdftex.def)             Requested size: 343.60988pt x 221.24286pt.
 
-Overfull \vbox (26.12569pt too high) detected at line 1415
- []
-
-[111
-
- <./resources/ADHSumStats.png>]
-<./resources/ADHCAsynth.png, id=2350, 593.21625pt x 490.08093pt>
-File: ./resources/ADHCAsynth.png Graphic file (type png)
-<use ./resources/ADHCAsynth.png>
-Package pdftex.def Info: ./resources/ADHCAsynth.png  used on input line 1422.
-(pdftex.def)             Requested size: 343.60988pt x 283.88072pt.
-
-Overfull \vbox (58.47517pt too high) detected at line 1422
+Overfull \vbox (26.12569pt too high) detected at line 1433
  []
 
 [112
 
+ <./resources/ADHSumStats.png>]
+<./resources/ADHCAsynth.png, id=2369, 593.21625pt x 490.08093pt>
+File: ./resources/ADHCAsynth.png Graphic file (type png)
+<use ./resources/ADHCAsynth.png>
+Package pdftex.def Info: ./resources/ADHCAsynth.png  used on input line 1440.
+(pdftex.def)             Requested size: 265.91295pt x 219.6849pt.
+ [113
+
  <./resources/ADHCAsynth.png>]
-<./resources/ADHSdifftrends.png, id=2371, 447.92343pt x 424.58624pt>
+<./resources/ADHSdifftrends.png, id=2391, 447.92343pt x 424.58624pt>
 File: ./resources/ADHSdifftrends.png Graphic file (type png)
 <use ./resources/ADHSdifftrends.png>
-Package pdftex.def Info: ./resources/ADHSdifftrends.png  used on input line 143
-0.
-(pdftex.def)             Requested size: 343.60988pt x 325.71443pt.
+Package pdftex.def Info: ./resources/ADHSdifftrends.png  used on input line 144
+8.
+(pdftex.def)             Requested size: 231.75961pt x 219.6849pt.
 
-Overfull \vbox (120.59726pt too high) detected at line 1430
+Overfull \vbox (14.56773pt too high) detected at line 1448
  []
 
-[113
+[114
 
- <./resources/ADHSdifftrends.png>] [114
+ <./resources/ADHSdifftrends.png>] [115
 
 ]
-<./resources/ADHPlacebo.png, id=2412, 447.17062pt x 449.42906pt>
+<./resources/ADHPlacebo.png, id=2432, 447.17062pt x 449.42906pt>
 File: ./resources/ADHPlacebo.png Graphic file (type png)
 <use ./resources/ADHPlacebo.png>
-Package pdftex.def Info: ./resources/ADHPlacebo.png  used on input line 1452.
-(pdftex.def)             Requested size: 324.52498pt x 326.16718pt.
-
-Overfull \vbox (100.76163pt too high) detected at line 1452
- []
-
-[115
+Package pdftex.def Info: ./resources/ADHPlacebo.png  used on input line 1470.
+(pdftex.def)             Requested size: 218.5833pt x 219.6849pt.
+ [116
 
  <./resources/ADHPlacebo.png>]
-<./resources/ADHPredictionErrors.png, id=2434, 450.9347pt x 435.12563pt>
+<./resources/ADHPredictionErrors.png, id=2453, 450.9347pt x 435.12563pt>
 File: ./resources/ADHPredictionErrors.png Graphic file (type png)
 <use ./resources/ADHPredictionErrors.png>
 Package pdftex.def Info: ./resources/ADHPredictionErrors.png  used on input lin
-e 1459.
-(pdftex.def)             Requested size: 343.60988pt x 331.58195pt.
+e 1477.
+(pdftex.def)             Requested size: 227.66861pt x 219.6849pt.
+[117
 
-Overfull \vbox (106.1764pt too high) detected at line 1459
- []
+ <./resources/ADHPredictionErrors.png>] [118
 
-[116
-
- <./resources/ADHPredictionErrors.png>] [117
-
-] [118
+] [119
 
 ]
-<./resources/DI_CAweights.png, id=2497, 731.73375pt x 356.0803pt>
+<./resources/DI_CAweights.png, id=2516, 731.73375pt x 356.0803pt>
 File: ./resources/DI_CAweights.png Graphic file (type png)
 <use ./resources/DI_CAweights.png>
-Package pdftex.def Info: ./resources/DI_CAweights.png  used on input line 1500.
+Package pdftex.def Info: ./resources/DI_CAweights.png  used on input line 1518.
 
-(pdftex.def)             Requested size: 381.79135pt x 185.78766pt.
- [119
+(pdftex.def)             Requested size: 451.43716pt x 219.6849pt.
 
- <./resources/DI_CAweights.png>]
-<./resources/DI_CA_trends.png, id=2518, 581.17125pt x 456.20438pt>
-File: ./resources/DI_CA_trends.png Graphic file (type png)
-<use ./resources/DI_CA_trends.png>
-Package pdftex.def Info: ./resources/DI_CA_trends.png  used on input line 1507.
+Overfull \hbox (69.64581pt too wide) in paragraph at lines 1518--1518
+ [] 
+ []
 
-(pdftex.def)             Requested size: 381.79135pt x 299.69662pt.
 
-Overfull \vbox (74.29108pt too high) detected at line 1507
+Overfull \vbox (7.87936pt too high) detected at line 1518
  []
 
 [120
 
+ <./resources/DI_CAweights.png>]
+<./resources/DI_CA_trends.png, id=2537, 581.17125pt x 456.20438pt>
+File: ./resources/DI_CA_trends.png Graphic file (type png)
+<use ./resources/DI_CA_trends.png>
+Package pdftex.def Info: ./resources/DI_CA_trends.png  used on input line 1525.
+
+(pdftex.def)             Requested size: 279.85469pt x 219.6849pt.
+ [121
+
  <./resources/DI_CA_trends.png>]
-<./resources/DI_CAstates.png, id=2539, 575.14874pt x 448.67625pt>
+<./resources/DI_CAstates.png, id=2559, 575.14874pt x 448.67625pt>
 File: ./resources/DI_CAstates.png Graphic file (type png)
 <use ./resources/DI_CAstates.png>
-Package pdftex.def Info: ./resources/DI_CAstates.png  used on input line 1514.
-(pdftex.def)             Requested size: 381.79135pt x 297.84564pt.
+Package pdftex.def Info: ./resources/DI_CAstates.png  used on input line 1532.
+(pdftex.def)             Requested size: 281.60594pt x 219.6849pt.
 
-Overfull \vbox (72.4401pt too high) detected at line 1514
- []
+[122
 
-[121
+ <./resources/DI_CAstates.png>] [123
 
- <./resources/DI_CAstates.png>] [122
-
-] [123
+] [124
 
 ]
-Overfull \vbox (1.91154pt too high) detected at line 1567
- []
-
-[124
-
-]
-<./resources/HVRoyModel.png, id=2620, 498.36188pt x 283.81032pt>
-File: ./resources/HVRoyModel.png Graphic file (type png)
-<use ./resources/HVRoyModel.png>
-Package pdftex.def Info: ./resources/HVRoyModel.png  used on input line 1575.
-(pdftex.def)             Requested size: 343.60988pt x 195.68642pt.
-
-Overfull \vbox (0.56924pt too high) detected at line 1575
+Overfull \vbox (1.91154pt too high) detected at line 1585
  []
 
 [125
 
- <./resources/HVRoyModel.png>]
-<./resources/HVRoyDist.png, id=2641, 515.67656pt x 463.7325pt>
-File: ./resources/HVRoyDist.png Graphic file (type png)
-<use ./resources/HVRoyDist.png>
-Package pdftex.def Info: ./resources/HVRoyDist.png  used on input line 1583.
-(pdftex.def)             Requested size: 324.52498pt x 291.84166pt.
+]
+<./resources/HVRoyModel.png, id=2639, 498.36188pt x 283.81032pt>
+File: ./resources/HVRoyModel.png Graphic file (type png)
+<use ./resources/HVRoyModel.png>
+Package pdftex.def Info: ./resources/HVRoyModel.png  used on input line 1593.
+(pdftex.def)             Requested size: 343.60988pt x 195.68642pt.
 
-Overfull \vbox (96.72449pt too high) detected at line 1583
+Overfull \vbox (0.56924pt too high) detected at line 1593
  []
 
 [126
 
- <./resources/HVRoyDist.png>] [127
+ <./resources/HVRoyModel.png>]
+<./resources/HVRoyDist.png, id=2660, 515.67656pt x 463.7325pt>
+File: ./resources/HVRoyDist.png Graphic file (type png)
+<use ./resources/HVRoyDist.png>
+Package pdftex.def Info: ./resources/HVRoyDist.png  used on input line 1601.
+(pdftex.def)             Requested size: 324.52498pt x 291.84166pt.
 
-] [128
+Overfull \vbox (96.72449pt too high) detected at line 1601
+ []
+
+[127
+
+ <./resources/HVRoyDist.png>] [128
 
 ] [129
 
@@ -1674,246 +1632,248 @@ Overfull \vbox (96.72449pt too high) detected at line 1583
 
 ] [133
 
-]
-[134
+] [134
 
-] [135
+]
+[135
 
 ] [136
 
+] [137
+
 ]
-<./resources/CornelissenBins.png, id=2861, 590.205pt x 477.28313pt>
+<./resources/CornelissenBins.png, id=2880, 590.205pt x 477.28313pt>
 File: ./resources/CornelissenBins.png Graphic file (type png)
 <use ./resources/CornelissenBins.png>
 Package pdftex.def Info: ./resources/CornelissenBins.png  used on input line 17
-26.
+44.
 (pdftex.def)             Requested size: 343.60988pt x 277.87311pt.
 
-Overfull \vbox (100.75594pt too high) detected at line 1726
- []
-
-[137
-
- <./resources/CornelissenBins.png>]
-<./resources/CornelissenGrouped.png, id=2882, 593.96906pt x 450.18187pt>
-File: ./resources/CornelissenGrouped.png Graphic file (type png)
-<use ./resources/CornelissenGrouped.png>
-Package pdftex.def Info: ./resources/CornelissenGrouped.png  used on input line
- 1733.
-(pdftex.def)             Requested size: 343.60988pt x 260.43935pt.
-
-Overfull \vbox (65.32217pt too high) detected at line 1733
+Overfull \vbox (100.75594pt too high) detected at line 1744
  []
 
 [138
 
- <./resources/CornelissenGrouped.png>] [139
+ <./resources/CornelissenBins.png>]
+<./resources/CornelissenGrouped.png, id=2901, 593.96906pt x 450.18187pt>
+File: ./resources/CornelissenGrouped.png Graphic file (type png)
+<use ./resources/CornelissenGrouped.png>
+Package pdftex.def Info: ./resources/CornelissenGrouped.png  used on input line
+ 1751.
+(pdftex.def)             Requested size: 343.60988pt x 260.43935pt.
 
-] [140
-
-]
-<./resources/HVMTEmap.png, id=2943, 518.6878pt x 261.22594pt>
-File: ./resources/HVMTEmap.png Graphic file (type png)
-<use ./resources/HVMTEmap.png>
-Package pdftex.def Info: ./resources/HVMTEmap.png  used on input line 1762.
-(pdftex.def)             Requested size: 381.79135pt x 192.2917pt.
-
-Overfull \vbox (15.17453pt too high) detected at line 1762
+Overfull \vbox (65.32217pt too high) detected at line 1751
  []
 
-[141
+[139
 
- <./resources/HVMTEmap.png>]
-<./resources/HVWeights.png, id=2964, 738.50906pt x 433.62pt>
-File: ./resources/HVWeights.png Graphic file (type png)
-<use ./resources/HVWeights.png>
-Package pdftex.def Info: ./resources/HVWeights.png  used on input line 1769.
-(pdftex.def)             Requested size: 381.79135pt x 224.167pt.
+ <./resources/CornelissenGrouped.png>] [140
 
-Overfull \vbox (47.04984pt too high) detected at line 1769
+] [141
+
+]
+<./resources/HVMTEmap.png, id=2962, 518.6878pt x 261.22594pt>
+File: ./resources/HVMTEmap.png Graphic file (type png)
+<use ./resources/HVMTEmap.png>
+Package pdftex.def Info: ./resources/HVMTEmap.png  used on input line 1780.
+(pdftex.def)             Requested size: 381.79135pt x 192.2917pt.
+
+Overfull \vbox (15.17453pt too high) detected at line 1780
  []
 
 [142
 
- <./resources/HVWeights.png>]
-<./resources/HVPRTE.png, id=2985, 691.08188pt x 392.21532pt>
-File: ./resources/HVPRTE.png Graphic file (type png)
-<use ./resources/HVPRTE.png>
-Package pdftex.def Info: ./resources/HVPRTE.png  used on input line 1776.
-(pdftex.def)             Requested size: 381.79135pt x 216.68262pt.
+ <./resources/HVMTEmap.png>]
+<./resources/HVWeights.png, id=2983, 738.50906pt x 433.62pt>
+File: ./resources/HVWeights.png Graphic file (type png)
+<use ./resources/HVWeights.png>
+Package pdftex.def Info: ./resources/HVWeights.png  used on input line 1787.
+(pdftex.def)             Requested size: 381.79135pt x 224.167pt.
 
-Overfull \vbox (21.56544pt too high) detected at line 1776
+Overfull \vbox (47.04984pt too high) detected at line 1787
  []
 
 [143
 
- <./resources/HVPRTE.png>]
-<./resources/HVRoyTEs.png, id=3006, 696.35156pt x 548.0475pt>
-File: ./resources/HVRoyTEs.png Graphic file (type png)
-<use ./resources/HVRoyTEs.png>
-Package pdftex.def Info: ./resources/HVRoyTEs.png  used on input line 1783.
-(pdftex.def)             Requested size: 343.60988pt x 270.42719pt.
+ <./resources/HVWeights.png>]
+<./resources/HVPRTE.png, id=3004, 691.08188pt x 392.21532pt>
+File: ./resources/HVPRTE.png Graphic file (type png)
+<use ./resources/HVPRTE.png>
+Package pdftex.def Info: ./resources/HVPRTE.png  used on input line 1794.
+(pdftex.def)             Requested size: 381.79135pt x 216.68262pt.
 
-Overfull \vbox (75.31001pt too high) detected at line 1783
+Overfull \vbox (21.56544pt too high) detected at line 1794
  []
 
 [144
 
- <./resources/HVRoyTEs.png>]
-<./resources/HVOLSIVexample.png, id=3027, 627.09282pt x 511.15968pt>
-File: ./resources/HVOLSIVexample.png Graphic file (type png)
-<use ./resources/HVOLSIVexample.png>
-Package pdftex.def Info: ./resources/HVOLSIVexample.png  used on input line 179
-1.
-(pdftex.def)             Requested size: 381.79135pt x 311.22197pt.
+ <./resources/HVPRTE.png>]
+<./resources/HVRoyTEs.png, id=3025, 696.35156pt x 548.0475pt>
+File: ./resources/HVRoyTEs.png Graphic file (type png)
+<use ./resources/HVRoyTEs.png>
+Package pdftex.def Info: ./resources/HVRoyTEs.png  used on input line 1801.
+(pdftex.def)             Requested size: 343.60988pt x 270.42719pt.
 
-Overfull \vbox (106.1048pt too high) detected at line 1791
+Overfull \vbox (75.31001pt too high) detected at line 1801
  []
 
 [145
 
- <./resources/HVOLSIVexample.png>] [146
+ <./resources/HVRoyTEs.png>]
+<./resources/HVOLSIVexample.png, id=3047, 627.09282pt x 511.15968pt>
+File: ./resources/HVOLSIVexample.png Graphic file (type png)
+<use ./resources/HVOLSIVexample.png>
+Package pdftex.def Info: ./resources/HVOLSIVexample.png  used on input line 180
+9.
+(pdftex.def)             Requested size: 381.79135pt x 311.22197pt.
+
+Overfull \vbox (106.1048pt too high) detected at line 1809
+ []
+
+[146
+
+ <./resources/HVOLSIVexample.png>] [147
 
 ]
-<./resources/CarnieroFirstStage.png, id=3071, 451.6875pt x 468.24937pt>
+<./resources/CarnieroFirstStage.png, id=3090, 451.6875pt x 468.24937pt>
 File: ./resources/CarnieroFirstStage.png Graphic file (type png)
 <use ./resources/CarnieroFirstStage.png>
 Package pdftex.def Info: ./resources/CarnieroFirstStage.png  used on input line
- 1815.
+ 1833.
 (pdftex.def)             Requested size: 343.60988pt x 356.23045pt.
 
-Overfull \vbox (151.11328pt too high) detected at line 1815
+Overfull \vbox (151.11328pt too high) detected at line 1833
  []
 
-[147
+[148
 
  <./resources/CarnieroFirstStage.png>]
-<./resources/chv_tab4.png, id=3092, 585.18625pt x 338.26375pt>
+<./resources/chv_tab4.png, id=3111, 585.18625pt x 338.26375pt>
 File: ./resources/chv_tab4.png Graphic file (type png)
 <use ./resources/chv_tab4.png>
-Package pdftex.def Info: ./resources/chv_tab4.png  used on input line 1822.
+Package pdftex.def Info: ./resources/chv_tab4.png  used on input line 1840.
 (pdftex.def)             Requested size: 289.07999pt x 167.10814pt.
- [148
+ [149
 
  <./resources/chv_tab4.png>]
-<./resources/chv_fig1.png, id=3113, 614.295pt x 562.1pt>
+<./resources/chv_fig1.png, id=3132, 614.295pt x 562.1pt>
 File: ./resources/chv_fig1.png Graphic file (type png)
 <use ./resources/chv_fig1.png>
-Package pdftex.def Info: ./resources/chv_fig1.png  used on input line 1830.
+Package pdftex.def Info: ./resources/chv_fig1.png  used on input line 1848.
 (pdftex.def)             Requested size: 381.79135pt x 349.3561pt.
 
-Overfull \vbox (144.23892pt too high) detected at line 1830
- []
-
-[149
-
- <./resources/chv_fig1.png>]
-<./resources/chv_tab5.png, id=3134, 506.89375pt x 443.6575pt>
-File: ./resources/chv_tab5.png Graphic file (type png)
-<use ./resources/chv_tab5.png>
-Package pdftex.def Info: ./resources/chv_tab5.png  used on input line 1838.
-(pdftex.def)             Requested size: 289.07999pt x 253.02278pt.
-
-Overfull \vbox (57.90561pt too high) detected at line 1838
+Overfull \vbox (144.23892pt too high) detected at line 1848
  []
 
 [150
 
- <./resources/chv_tab5.png>]
-<./resources/CarnieroSupport.png, id=3155, 545.78906pt x 423.08063pt>
-File: ./resources/CarnieroSupport.png Graphic file (type png)
-<use ./resources/CarnieroSupport.png>
-Package pdftex.def Info: ./resources/CarnieroSupport.png  used on input line 18
-46.
-(pdftex.def)             Requested size: 381.79135pt x 295.95428pt.
+ <./resources/chv_fig1.png>]
+<./resources/chv_tab5.png, id=3153, 506.89375pt x 443.6575pt>
+File: ./resources/chv_tab5.png Graphic file (type png)
+<use ./resources/chv_tab5.png>
+Package pdftex.def Info: ./resources/chv_tab5.png  used on input line 1856.
+(pdftex.def)             Requested size: 289.07999pt x 253.02278pt.
 
-Overfull \vbox (90.83711pt too high) detected at line 1846
+Overfull \vbox (57.90561pt too high) detected at line 1856
  []
 
 [151
 
- <./resources/CarnieroSupport.png>]
-<./resources/chv_fig4.png, id=3177, 617.30624pt x 546.04pt>
-File: ./resources/chv_fig4.png Graphic file (type png)
-<use ./resources/chv_fig4.png>
-Package pdftex.def Info: ./resources/chv_fig4.png  used on input line 1854.
-(pdftex.def)             Requested size: 400.88208pt x 354.61351pt.
+ <./resources/chv_tab5.png>]
+<./resources/CarnieroSupport.png, id=3175, 545.78906pt x 423.08063pt>
+File: ./resources/CarnieroSupport.png Graphic file (type png)
+<use ./resources/CarnieroSupport.png>
+Package pdftex.def Info: ./resources/CarnieroSupport.png  used on input line 18
+64.
+(pdftex.def)             Requested size: 381.79135pt x 295.95428pt.
 
-Overfull \hbox (19.09073pt too wide) in paragraph at lines 1854--1854
- [] 
- []
-
-
-Overfull \vbox (153.09634pt too high) detected at line 1854
+Overfull \vbox (90.83711pt too high) detected at line 1864
  []
 
 [152
 
- <./resources/chv_fig4.png>]
-<./resources/chv_fig6.png, id=3199, 581.17125pt x 444.66125pt>
-File: ./resources/chv_fig6.png Graphic file (type png)
-<use ./resources/chv_fig6.png>
-Package pdftex.def Info: ./resources/chv_fig6.png  used on input line 1861.
-(pdftex.def)             Requested size: 289.07999pt x 221.18341pt.
+ <./resources/CarnieroSupport.png>]
+<./resources/chv_fig4.png, id=3197, 617.30624pt x 546.04pt>
+File: ./resources/chv_fig4.png Graphic file (type png)
+<use ./resources/chv_fig4.png>
+Package pdftex.def Info: ./resources/chv_fig4.png  used on input line 1872.
+(pdftex.def)             Requested size: 400.88208pt x 354.61351pt.
 
-Overfull \vbox (26.06624pt too high) detected at line 1861
+Overfull \hbox (19.09073pt too wide) in paragraph at lines 1872--1872
+ [] 
+ []
+
+
+Overfull \vbox (153.09634pt too high) detected at line 1872
  []
 
 [153
 
- <./resources/chv_fig6.png>] [154
+ <./resources/chv_fig4.png>]
+<./resources/chv_fig6.png, id=3218, 581.17125pt x 444.66125pt>
+File: ./resources/chv_fig6.png Graphic file (type png)
+<use ./resources/chv_fig6.png>
+Package pdftex.def Info: ./resources/chv_fig6.png  used on input line 1879.
+(pdftex.def)             Requested size: 289.07999pt x 221.18341pt.
+
+Overfull \vbox (26.06624pt too high) detected at line 1879
+ []
+
+[154
+
+ <./resources/chv_fig6.png>] [155
 
 ]
-<./resources/CornelissenNegative.png, id=3239, 371.13657pt x 286.82156pt>
+<./resources/CornelissenNegative.png, id=3258, 371.13657pt x 286.82156pt>
 File: ./resources/CornelissenNegative.png Graphic file (type png)
 <use ./resources/CornelissenNegative.png>
 Package pdftex.def Info: ./resources/CornelissenNegative.png  used on input lin
-e 1882.
+e 1900.
 (pdftex.def)             Requested size: 343.60988pt x 265.55524pt.
 
-Overfull \vbox (82.1667pt too high) detected at line 1882
- []
-
-[155
-
- <./resources/CornelissenNegative.png>]
-<./resources/CornelissenSummary.png, id=3260, 779.91376pt x 433.62pt>
-File: ./resources/CornelissenSummary.png Graphic file (type png)
-<use ./resources/CornelissenSummary.png>
-Package pdftex.def Info: ./resources/CornelissenSummary.png  used on input line
- 1889.
-(pdftex.def)             Requested size: 381.79135pt x 212.27054pt.
-
-Overfull \vbox (17.15337pt too high) detected at line 1889
+Overfull \vbox (82.1667pt too high) detected at line 1900
  []
 
 [156
 
- <./resources/CornelissenSummary.png>] [157
+ <./resources/CornelissenNegative.png>]
+<./resources/CornelissenSummary.png, id=3279, 779.91376pt x 433.62pt>
+File: ./resources/CornelissenSummary.png Graphic file (type png)
+<use ./resources/CornelissenSummary.png>
+Package pdftex.def Info: ./resources/CornelissenSummary.png  used on input line
+ 1907.
+(pdftex.def)             Requested size: 381.79135pt x 212.27054pt.
+
+Overfull \vbox (17.15337pt too high) detected at line 1907
+ []
+
+[157
+
+ <./resources/CornelissenSummary.png>] [158
 
 ]
-<./resources/sillydiversion.pdf, id=3302, 979.66pt x 618.31pt>
+<./resources/sillydiversion.pdf, id=3321, 979.66pt x 618.31pt>
 File: ./resources/sillydiversion.pdf Graphic file (type pdf)
 <use ./resources/sillydiversion.pdf>
-Package pdftex.def Info: ./resources/sillydiversion.pdf  used on input line 191
-2.
+Package pdftex.def Info: ./resources/sillydiversion.pdf  used on input line 193
+0.
 (pdftex.def)             Requested size: 289.07999pt x 182.44704pt.
- [158
+ [159
 
- <./resources/sillydiversion.pdf>] [159
+ <./resources/sillydiversion.pdf>] [160
 
 ] (./treatment-effects.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 12.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)) [160
+)) [161
 
-] [161
+] [162
 
 
 ]
-[162
+[163
 
 
 ]
@@ -1926,20 +1886,20 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 \tf@snm=\write9
 \openout9 = `treatment-effects.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1941.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1941.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1959.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1959.
  (./treatment-effects.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1941.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1941.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1959.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1959.
 
 Package rerunfilecheck Info: File `treatment-effects.out' has not changed.
 (rerunfilecheck)             Checksum: B767B88738D9C4FCA1547E84CCB94240;666.
  ) 
 Here is how much of TeX's memory you used:
- 20151 strings out of 492649
- 378941 string characters out of 6129622
- 473057 words of memory out of 5000000
- 23115 multiletter control sequences out of 15000+600000
+ 20155 strings out of 492649
+ 378980 string characters out of 6129622
+ 473097 words of memory out of 5000000
+ 23117 multiletter control sequences out of 15000+600000
  22289 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,15n,62p,837b,623s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1974,10 +1934,10 @@ s/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/
 type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
 pe1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
 1/public/cm-super/sftt1095.pfb>
-Output written on treatment-effects.pdf (162 pages, 4294929 bytes).
+Output written on treatment-effects.pdf (163 pages, 4297398 bytes).
 PDF statistics:
- 3594 PDF objects out of 4296 (max. 8388607)
- 3242 compressed objects within 33 object streams
- 354 named destinations out of 1000 (max. 500000)
+ 3615 PDF objects out of 4296 (max. 8388607)
+ 3262 compressed objects within 33 object streams
+ 356 named destinations out of 1000 (max. 500000)
  442 words of extra memory for PDF output out of 10000 (max. 10000000)
 
