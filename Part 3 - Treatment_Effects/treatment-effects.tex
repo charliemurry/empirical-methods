@@ -1,7 +1,7 @@
 \input{../slideHeader}
 
 \title{Treatment Effects}
-\author{Richard L. Sweeney}
+\author{Charlie Murry and Richard L. Sweeney}
 \institute{based on slides by Chris Conlon}
 \date{Empirical Methods \\ Spring 2019}
 
@@ -51,7 +51,7 @@ This lecture draw heavily upon
 
 \begin{frame}
   \frametitle{Setup}
-  Typically attributed to Rubin
+  Typically attributed to Donald Rubin
   \begin{itemize}
   \item Observe $N$ units, indexed by $i$, drawn randomly from a larger population
   \item Postulate two \alert{potential outcomes} for each unit $\{Y_i(1), Y_i(0)\}$ depending on whether they receive treatment or not.
@@ -72,7 +72,13 @@ This lecture draw heavily upon
   \begin{itemize}
   \item Note there is already an important assumption embedded in this setup, the stable unit treatment value assumption (\alert{SUTVA}). 
   \item Assume that the outcome, in either state for unit $i$ does not depend on the assignment of other units.   
-  \item This is likely to fail in many important settings. Examples?
+  \item This is likely to fail in many important settings. 
+  \item Two ways to express this:
+  \begin{itemize}
+  	\item No interference.
+  	\item No hidden variations
+  \end{itemize}
+  \item Examples?
 \end{itemize}
 \end{frame}
 
@@ -249,10 +255,10 @@ But conditional independence does this for us:
 
 \begin{frame}
 \frametitle{A Matching Example}
-Here is an example where I found that matching was helpful in my own work with Julie Mortimer:
+Here is an example where matching was helpful from a paper by Prof. Mortimer:
 \begin{itemize}
-\item We ran a randomized experiment where we removed Snickers bars from around 60 vending machines in office buildings in downtown Chicago.
-\item We have a few possible control groups:
+\item She ran a randomized experiment where we removed Snickers bars from around 60 vending machines in office buildings in downtown Chicago.
+\item There are a few possible control groups:
 \begin{enumerate}
 \item Same vending machine in other weeks (captures heterogeneous tastes in the cross section)
 \item Other vending machines in the same week (might capture aggregate shocks, ad campaigns, etc.)
@@ -366,7 +372,7 @@ e(x) = Pr(W_i  = 1 | X_i) = E[W_i | X_i = x]
 \begin{frame}
   \frametitle{This suggests an attractive weigthing}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{./resources/imbensAEAPsWeight}
+    \includegraphics[scale=0.55]{./resources/imbensAEAPsWeight}
   \end{center}  
 \end{frame}
 
@@ -706,35 +712,35 @@ Finally, we need to understand what monotonicity means in terms of restrictions 
 \begin{frame}
   \frametitle{Example: Pretrial Detention}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{./resources/DobbieAbstract}
+    \includegraphics[height=.8\textheight]{./resources/DobbieAbstract}
   \end{center}  
 \end{frame}
 
 \begin{frame}
   \frametitle{Means for detained vs released defendants}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{./resources/DobbieStats}
+    \includegraphics[height=.8\textheight]{./resources/DobbieStats}
   \end{center}  
 \end{frame}
 
 \begin{frame}
   \frametitle{First stage: Judges Matter}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{./resources/DobbieFirstStageGraph}
+    \includegraphics[height=.8\textheight]{./resources/DobbieFirstStageGraph}
   \end{center}  
 \end{frame}
 
 \begin{frame}
   \frametitle{Is assignment random?}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{./resources/DobbieRandomization}
+    \includegraphics[height=.8\textheight]{./resources/DobbieRandomization}
   \end{center}  
 \end{frame}
 
 \begin{frame}
   \frametitle{Results}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{./resources/DobbieResults}
+    \includegraphics[height=.8\textheight]{./resources/DobbieResults}
   \end{center}  
 \end{frame}
 
@@ -754,7 +760,7 @@ Finally, we need to understand what monotonicity means in terms of restrictions 
     \item Follow strategy of Dahl et al (QJE 2014)
     \item Estimate complier share by subgroup
    \end{itemize}
-   \includegraphics[width=.9\textwidth]{./resources/DobbieComplierStats} 
+   \includegraphics[height=.8\textheight]{./resources/DobbieComplierStats} 
 \end{frame}
 
 \begin{frame}
@@ -802,14 +808,14 @@ Finally, we need to understand what monotonicity means in terms of restrictions 
 
 \begin{frame}{}
   \begin{center}
-    \includegraphics[width=1\textwidth]{./resources/StockNBERIV}
+    \includegraphics[height=.8\textheight]{./resources/StockNBERIV}
   \end{center}  
 \end{frame}
 
 
 \begin{frame}{}
   \begin{center}
-    \includegraphics[width=1\textwidth]{./resources/StockNBER2sls}
+    \includegraphics[height=.8\textheight]{./resources/StockNBER2sls}
   \end{center}  
 \end{frame}
 
@@ -876,7 +882,7 @@ Finally, we need to understand what monotonicity means in terms of restrictions 
   \frametitle{Results}
   \vspace{-10pt}
   \begin{center}
-    \includegraphics[width=1\textwidth]{./resources/belloniTakingsResults}
+    \includegraphics[height=.8\textheight]{./resources/belloniTakingsResults}
   \end{center}  
 \end{frame}
 
@@ -957,19 +963,19 @@ Y_i = f(x_i) + \tau D_i  + \epsilon_i
 	
 \begin{frame}{RDD: Kernel Boundary Problem}
 \begin{center}
-\includegraphics[width=\textwidth]{./resources/ll-fig2}
+\includegraphics[height=0.8\textheight]{./resources/ll-fig2}
 \end{center}
 \end{frame}
 
 \begin{frame}{Important reminder: LOCAL effect}
   \begin{center}
-  \includegraphics[width=\textwidth]{./resources/CatteneoLocpoly}
+  \includegraphics[height=0.8\textheight]{./resources/CatteneoLocpoly}
   \end{center}
 \end{frame}
 
 \begin{frame}{Bias}
   \begin{center}
-  \includegraphics[width=\textwidth]{./resources/CatteneoBias}
+  \includegraphics[height=0.8\textheight]{./resources/CatteneoBias}
   \end{center}
 \end{frame}
 
@@ -1030,7 +1036,7 @@ Read Lee and Lemieux (2010) before you get started.
   
 \begin{frame}{Raw vs Local Comparisons}
   \begin{center}
-  \includegraphics[width=\textwidth]{./resources/CatteneoRawScatter}
+  \includegraphics[height=0.8\textheight]{./resources/CatteneoRawScatter}
   \end{center}
 \end{frame}
 
@@ -1135,7 +1141,7 @@ E[Y_{i2} - Y_{i1} | T_{i2}=1] & = E[Y_{i2}^1 - Y_{i1}^1 | T_{i2}=1] \\
   \vspace{-10pt}
   \begin{figure}
   \centering
-  \includegraphics[height=1.05\textheight]{./resources/gasTaxes}
+  \includegraphics[scale=0.4]{./resources/gasTaxes}
   \end{figure}
 \end{frame}
 
@@ -1156,23 +1162,23 @@ which can be estimated by the difference in the growth between the treatment and
 \begin{frame}{Parallel trends solves a "missing data" problem}
 \begin{figure}
 \centering
-\includegraphics[width=.9\textwidth]{./resources/myDiD}
+\includegraphics[height=.8\textheight]{./resources/myDiD}
 \end{figure}
 \end{frame}
 
 \begin{frame}{Example: Minimum Wage}
 
-\includegraphics[width=\textwidth]{./resources/CKAbstract}
+\includegraphics[height=.8\textheight]{./resources/CKAbstract}
 \end{frame}
 
 \begin{frame}{Example: Minimum Wage}
 
-  \includegraphics[width=\textwidth]{./resources/CKSumStats}
+  \includegraphics[height=.8\textheight]{./resources/CKSumStats}
 \end{frame}
   
 \begin{frame}
   \vspace{-10pt}
-  \includegraphics[height=1.1\textheight]{./resources/CKwages}
+  \includegraphics[height=0.95\textheight]{./resources/CKwages}
 \end{frame}
   
 \begin{frame}
@@ -1293,7 +1299,7 @@ where $\alpha_g$ is a dummy for the treatment of comparison group, and $\beta (X
 \begin{frame}{The best DiD's can be seen graphically}
   \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{./resources/muehlegger_dying}
+  \includegraphics[height=0.8\textheight]{./resources/muehlegger_dying}
   \end{figure}
 \end{frame}
 
@@ -1336,6 +1342,24 @@ where $Z$ is an instrument which determines training eligibility say but does no
 assuming that the probability of training in the first period is zero.
 \end{itemize}              
 \end{frame}
+
+
+
+\begin{frame}[c]\frametitle{Bertrand, Duflo, Mullainathan (2004 QJE)}
+    
+DiD is comparing outcomes over time, but then should we be worried about serial correlation?\\[1em]
+
+The authors use CPS data and create placebo state laws and measure the effect on female wages. \\[1em]
+
+Find significant result in 45\% of fake laws. \\[1em]
+
+\textbf{Suggestion:} Just use pre and post. Or allow for ``unrestricted covariance structure'' over time and within a state. 
+
+
+
+
+\end{frame}
+
 
 \section{Synthetic Controls}
 
@@ -1389,7 +1413,7 @@ assuming that the probability of training in the first period is zero.
 \begin{frame}
   \frametitle{Sales were trending down everywhere}
   \begin{center}
-    \includegraphics[width=.85\textwidth]{./resources/ADHCAvsUS}
+    \includegraphics[height=.85\textheight]{./resources/ADHCAvsUS}
   \end{center}  
 \end{frame}
 
@@ -1397,7 +1421,7 @@ assuming that the probability of training in the first period is zero.
   \frametitle{What does synthetic CA look like?}
   \vspace{-15pt}
   \begin{center}
-    \includegraphics[height=.95\textheight]{./resources/ADHWeights}
+    \includegraphics[height=.85\textheight]{./resources/ADHWeights}
   \end{center}  
 \end{frame}
 
@@ -1411,15 +1435,15 @@ assuming that the probability of training in the first period is zero.
 \begin{frame}
   \frametitle{}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{./resources/ADHCAsynth}
+    \includegraphics[height=.9\textheight]{./resources/ADHCAsynth}
   \end{center}  
 \end{frame}
 
 \begin{frame}
-  \frametitle{Parallel trends acheived by contstruction}
+  \frametitle{Parallel trends achieved by construction}
   \vspace{-10pt}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{./resources/ADHSdifftrends}
+    \includegraphics[height=.9\textheight]{./resources/ADHSdifftrends}
   \end{center}  
 \end{frame}
 
@@ -1441,14 +1465,14 @@ assuming that the probability of training in the first period is zero.
 \begin{frame}
   \frametitle{}
   \begin{center}
-    \includegraphics[width=.85\textwidth]{./resources/ADHPlacebo}
+    \includegraphics[height=.9\textheight]{./resources/ADHPlacebo}
   \end{center}  
 \end{frame}
 
 \begin{frame}
   \frametitle{}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{./resources/ADHPredictionErrors}
+    \includegraphics[height=.9\textheight]{./resources/ADHPredictionErrors}
   \end{center}  
 \end{frame}
 
@@ -1463,7 +1487,7 @@ assuming that the probability of training in the first period is zero.
 \end{frame}
     
 \begin{frame}
-    \frametitle{DI consider a series of contstraints}
+    \frametitle{DI consider a series of constraints}
   \begin{enumerate}
     \item no intercept: $\mu = 0$
     \item adding up: $ \sum_i^N w_i = 1$
@@ -1489,21 +1513,21 @@ assuming that the probability of training in the first period is zero.
 \begin{frame}
   \frametitle{}
   \begin{center}
-    \includegraphics[width=\textwidth]{./resources/DI_CAweights}
+    \includegraphics[height=.9\textheight]{./resources/DI_CAweights}
   \end{center}  
 \end{frame}
 
 \begin{frame}
   \frametitle{}
   \begin{center}
-    \includegraphics[width=\textwidth]{./resources/DI_CA_trends}
+    \includegraphics[height=.9\textheight]{./resources/DI_CA_trends}
   \end{center}  
 \end{frame}
 
 \begin{frame}
   \frametitle{}
   \begin{center}
-    \includegraphics[width=\textwidth]{./resources/DI_CAstates}
+    \includegraphics[height=.9\textheight]{./resources/DI_CAstates}
   \end{center}  
 \end{frame}
 
@@ -1523,7 +1547,7 @@ assuming that the probability of training in the first period is zero.
     \item $\mu_j(x)$ represents the average outcome for individuals with observables $x$, and conditional mean zero $U_{ji}$ captures unobserved heterogeneity (assumed to be additively separable)
     \item Individual treatment effect $\tau_i = Y_{1i} - Y_{0i}$ 
     \item ATE averages $\tau_i$ over entire population.
-    \item ATT / ATU averges over those who recieved / didn't recieve the treatment (somehow)
+    \item ATT / ATU averages over those who received / didn't receive the treatment (somehow)
     \item LATE averages for those induced to switch due to an instrument 
   \end{itemize}
 \end{frame}
