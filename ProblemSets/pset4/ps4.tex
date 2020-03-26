@@ -1,0 +1,104 @@
+\documentclass[10pt]{article} 
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage{geometry} 
+\geometry{verbose,marginparwidth=0.5in,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in} 
+\usepackage{lmodern}
+
+\usepackage{booktabs}
+
+\usepackage{enumitem}
+% \setlist{nosep}
+
+% \usepackage{amsfonts}
+% \usepackage{amsmath}
+\usepackage{comment}
+
+\usepackage{mathtools}
+\usepackage{bbm}
+\newcommand{\one}{\mathbbm{1}}
+
+
+
+\begin{document}
+
+
+\begin{center}
+\textbf{Empirical Methods - Boston College}
+
+\emph{Spring 2020}\\[1em]
+
+Homework 1 -- Roots: Discrete Choice Demand Pricing Equilibrium\\[1em]
+Due: Monday, 4/2
+\end{center}
+
+There are three single product firms (labeled A, B, and C) in a market. There exists a unit mass of consumers, each indexed by $i$. Consumer $i$'s indirect utility for product $j\in\{A,B,C\}$ is
+$$u_{ij} = v_j - p_j + \varepsilon_{ij},$$
+where $p_j$ represents the price of firm $j$, $v_j$ represents the the quality of firm $j$, and $\varepsilon_{ij}$ is consumer $i$'s idiosyncratic preference for firm $j$.  
+
+Each consumer chooses to consume a single unit of the product that gives her the highest utility, or the outside option with utility $u_{i0} = \varepsilon_{i0}$.
+
+If $\varepsilon\sim$ iid Extreme Value then consumer demand is the following:
+
+\begin{align*}
+q_A &= \frac{exp(v_A - p_A)}{1 + exp(v_A - p_A) + exp(v_B - p_B) + exp(v_C - p_C)} \\
+q_B &= \frac{exp(v_B - p_B)}{1 + exp(v_A - p_A) + exp(v_B - p_B) + exp(v_C - p_C)} \\
+q_C &= \frac{exp(v_C - p_C)}{1 + exp(v_A - p_A) + exp(v_B - p_B) + exp(v_C - p_C)} \\
+q_0 &= \frac{1}{1 + exp(v_A - p_A) + exp(v_B - p_B) + exp(v_C - p_C)} 
+\end{align*} 
+and $\sum q_j + q_0 = 1$.
+
+Assume the firms have zero marginal costs, complete information, and compete by simultaneously setting prices. The equilibrium concept is (Bertrand) Nash. Also, note that 
+
+$$\frac{\partial q_A}{\partial p_A} = -q_A(1-q_A)$$
+
+\vspace{2em}
+
+\noindent
+\textbf{1.} Consider the following parameterization: $v_j=-1\,,\forall j$. What is the demand for each option if $p_j=1,\,\forall j$?\\[2em]
+
+\noindent
+\textbf{2.}
+Given the above parameterizations for product values, use a canned version of Broyden's Method (from COMPECON in Matlab, or whatever software you prefer) to solve for the Nash pricing equilibrium. (Hint: There is a unique equilibrium.) Report the starting value and convergence criteria (if it converges). Use the following starting values:
+
+\begin{description}
+	\item[a.] $[p_A,p_B,p_C] = [1,1,1]$
+	\item[b.] $[p_A,p_B,p_C] =[0,0,0]$
+	\item[c.] $[p_A,p_B,p_C] =[0,1,2]$
+	\item[d.] $[p_A,p_B,p_C] =[3,2,1]$\\[2em]
+\end{description}
+
+\noindent
+\textbf{3.}
+Now use a Guass-Jacobi method (using the secant method for each sub-iteration) to solve for the pricing equilibirum. Use the four starting values from above. Which method is faster and why do you think? Make sure you put something in your optimization loop to stop the program if it doesn't seem to be converging.\\[2em]
+
+\noindent
+\textbf{4.}
+Repeat excercise (3), but only take \textbf{one secent step} per iteration for each equation. Be clear in your code that you only take a single secant step. Report the results. Do you do better or worse in terms of speed and accuracy?\\[2em]
+
+
+\noindent
+\textbf{5.}
+Lastly, use the following update rule to solve for equilibrium, again using the same starting values:
+
+\begin{equation*}
+	p^{t+1} = \frac{1}{1-q(p^t)}
+\end{equation*}
+
+Does this converge? Is it faster or slower than the other two methods?\\[2em]
+
+
+
+
+% \noindent
+% \textbf{5.} Solve the pricing equilibrium (using your preferred method) for 
+% \begin{align*}
+% v_A=-1,\\ 
+% v_B=-1,\\ 
+% v_C=[-4,-3,-2,-1,0,1]. 
+% \end{align*}
+% Plot equilibrium $p_A$ and $p_C$ as a function of the vector of $v_C$. 
+
+
+
+\end{document}
