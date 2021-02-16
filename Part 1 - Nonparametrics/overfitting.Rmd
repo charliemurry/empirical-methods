@@ -44,6 +44,57 @@ legend("topright", c("h=0.1","h=0.9","h=3.0"), lwd=6, col=c("orange","purple","l
 ```
 
 
+
+## Example of Partially linear regression
+
+Now suppose there is a second covariate that generates the dependent varaible. 
+
+```{r}
+n = 200
+Z = runif(n, min=0, max=4*pi)
+X = sample(c(0,1), replace=TRUE, size=n)
+H = sample(c(0,1), replace=TRUE, size=n)
+# Z = Z + .2*X*H  # Induce some correlation between Z and X through a binary variable H
+beta = 1
+Y = sin(Z) + beta * X  + rnorm(200, sd=0.4)
+plot(Z,Y, pch=1)
+```
+
+We care about $\beta$ (and $g(X_2)$). The Robinson (1988) procedure looks like the following.
+
+
+Nonparametrically regress $y$ on $z$.
+```{r}
+m_y <- ksmooth(x=Z,y=Y,kernel = "normal",bandwidth = 2)
+```
+
+Nonparametrically regress $x$ on $z$.
+```{r}
+m_x <- ksmooth(x=Z,y=X,kernel = "normal",bandwidth = 2)$y
+```
+
+
+Now do the adjusted regression using OLS proposed by Robinson (1988).
+
+```{r}
+df <- data.table(X,Y,Z)
+df <- df[order(Z),]
+
+YY = Y - m_y
+XX = X-m_x
+
+fit = lm(YY~XX)
+```
+
+Now we can also recover $g(z)$.
+
+```{r}
+g_hat = m_y - m_x * fit.coefficients(1)
+```
+
+
+
+
 ### Now in Julia
 
 ```{julia}

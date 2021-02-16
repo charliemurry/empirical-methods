@@ -1,0 +1,87 @@
+---
+title: "PS1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(MASS)
+library(ggplot2)
+```
+
+## Ryan Westphal Problem Set 1
+Load the data and set the bandwidth equal to the plug-in estimate.  Below is printed the plug-in estimate for bandwidth
+```{r, echo=TRUE}
+mydata<-read.csv(file="bids1.csv", header=TRUE, sep=",") #load the bids data
+bids = mydata[,1] 
+h <-bw.nrd0(bids) #set the bandwidth using direct plug-in
+h #print the bandwidth
+```
+
+**QUESTION 1** Estimate the density using an assumed normal distribution, a Gaussian Kernel and an Epanechnikov kernel, repectively.
+```{r, echo=TRUE}
+normal_mean<-mean(bids) #MLE estimate of normal distribution parameters are just sample mean 
+normal_sd<-sqrt(var(bids)) #and sample variance
+x<-seq(min(bids),max(bids),length=512)
+normreg<-dnorm(x, mean=normal_mean, sd=normal_sd) #create a density using these parameters
+Kgauss = density(bids, bw=h, kernel='gaussian') #estimate the density using a Gaussian Kernel
+Kepanech = density(bids, bw=h, kernel='epanech') #estimate the density using an Epanechnikov kernel
+```
+
+**QUESTION 2** Use a least-squares cross-validation to pick the bandwidth for the Epanechnikov kernel.  Below is printed the bandwidth calculated using least-squares cross-validation.
+```{r, echo=TRUE}
+J<- function(h){ #Define the function we will be minimizing.  This is an approximation of the least squares
+  fhat=Vectorize(function(x) density(bids,from=x,to=x,n=1,bw=h,kernel='epanech')$y) 
+  fhati=Vectorize(function(i) density(bids[-i],from=bids[i],to=bids[i],n=1,bw=h,kernel='epanech')$y)
+  F=fhati(1:length(bids))
+  return(integrate(function(x) fhat(x)^2,-Inf,Inf)$value-2*mean(F)) 
+}
+topt<- optimize(J,interval=c(.1,4)) #get the minimum of mean squared error
+bwcv=topt$minimum #set bandwidth equal to this minimum
+bwcv #print bandwidth
+Kcv = density(bids, bw=bwcv, kernel='epanech') #estimate the density using an Epanechnikov kernel and this new bandwidth
+```
+
+**QUESTION 3** Plot the histogram of the bids along with the 4 estimated density functions
+```{r, echo=TRUE}
+gram<-hist(bids, breaks=14) #plot a histogram
+normplot<-normreg*diff(gram$mids[1:2])*length(bids) #scale the normal distribution to fit the frequency data on the y-axis
+Kgaussplot = Kgauss$y*diff(gram$mids[1:2])*length(bids) #scale the Gaussian kernel plot
+Keplot = Kepanech$y*diff(gram$mids[1:2])*length(bids) #scale the Epanechnikov kernel plot
+Kcvplot = Kcv$y*diff(gram$mids[1:2])*length(bids) #scale the Epanechnikov kernel plot with the cross-validated bandwidth
+lines(x,normplot,col='purple') #plot the normal distribution
+lines(Kgauss$x, Kgaussplot, col='blue') #plot the non-parametrically estimated density using gaussian kernel
+lines(Kepanech$x, Keplot, col='limegreen') #plot the non-parametrically estimated density using Epanechnikov kernel with plug-in bw
+lines(Kcv$x, Kcvplot, col='red') #plot the non-parametrically estimated density using Epanechnikov kernel with cv bw
+```
+It seems that all of the kernel density estimates fit the data pretty well while the assumed normal puts too much weight near the median and in the tails.  The cross-validated bandwidth seems to work especially well because it is a little smoother and doesn't overfit the bumps near the center of the distribution but this improvement seems to be marginal.
+
+**QUESTION 4** Use GPV and the estimated density of bids to recover the valuations from the observed bids
+```{r, echo=TRUE}
+Kcdf <- list(x=Kcv$x, y=cumsum(Kcv$y)) #Calculate the CDF from the estimated pdf
+fPDF <- approxfun(Kcv$x, Kcv$y) #create a function to linearly interpolate between points of pdf
+fCDF <- approxfun(Kcdf$x, Kcdf$y) #create a function to linearly interpolate between points of cdf
+vals<-bids+fCDF(bids)/100/(2*fPDF(bids))
+```
+
+**Question 5** Estimate the density of valuations
+```{r, echo=TRUE}
+gramv<-hist(vals, breaks=14) #plot the valuations 
+hvals <-bw.nrd0(vals) #get a bandwidth using the plug-in
+Kepanechvals = density(vals, bw=hvals, kernel='epanech') #estimate the density using an Epanechnikov kernel
+Kevalsplot = Kepanechvals$y*diff(gramv$mids[1:2])*length(vals)
+lines(Kepanechvals$x, Kevalsplot, col='blue')
+```
+
+**Question 6** At a glance these valuations look like they were pulled from a log-normal distribution.  If we try to fit this data with a log-normal we get a log-mean and log-sd of roughly 1 and 0.5.  This looks like it fits the data pretty well and is fairly close to the nonparametrically estimated distribution.
+```{r, echo=TRUE}
+meanlog = mean(log(vals))
+sdlog = sd(log(vals))
+meanlog
+sdlog
+hist(vals, breaks=14)
+fitplotx <- seq(0, 10, 0.01)
+fitploty <- dlnorm(fitplotx, meanlog, sdlog)*diff(gramv$mids[1:2])*length(vals)
+lines(Kepanechvals$x, Kevalsplot, col='blue')
+lines(fitplotx, fitploty, col='red')
+```

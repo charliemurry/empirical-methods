@@ -4,7 +4,13 @@ This is a PhD level course in applied econometrics and computational economics, 
 
 In addition to traditional econometric approaches, this course draws connections to recent literature on machine learning.
 
-BC students should also checkout the [syllabus](syllabus.md). 
+BC students should also checkout the [syllabus](syllabus.md). Please interact with the course by forking this repo. I will expect each student to initiate a pull-request during the semester to either correct an error in the slides/homework or just add some info to a slide. 
+
+There are many great resources for getting started with git/Github. Here is a very incomplete list:
+1. Rich Sweeney's RA tips. https://github.com/rlsweeney/Sweeney_RA_Manual/wiki/Git-tips-and-tricks
+2. Intro to Programming by Clément Mazet-Sonilhac @ Sciences Po https://github.com/CMS27/IP2019/blob/master/Lectures/IP_Git_S46.pdf
+3. A more general research best practices is Matt Gentzkow and Jesse Shapiro's RA Guide, https://www.brown.edu/Research/Shapiro/pdfs/CodeAndData.pdf. There are more resources on Jesse's website. 
+4. One of many git cheatsheets: https://education.github.com/git-cheat-sheet-education.pdf
 
 Much of the material was (gratefully) forked from Chris Conlon's [micro-metrics](https://github.com/chrisconlon/micro-metrics) repo and other material is based of a PhD course Charlie used to co-teach with Paul Grieco and Mark Roberts at Penn State. 
 
