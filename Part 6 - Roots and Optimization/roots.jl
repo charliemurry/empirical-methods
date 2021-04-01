@@ -1,5 +1,6 @@
 # code for the roots Jupyter notebook
 
+
 # Load packages
 using Printf
 
@@ -27,18 +28,11 @@ end
 push!(xsave,x)
 
 
-
-g(x) = x.^0.5
-x = 0.1
-
-sol = fncIteration(g,x)
-
-
 function fncIteration(g::Function,x::Float64)
 
     d = 100.0
-    # x = 0.1
-
+    tol = 1e-4
+    
     while d>tol
     
         d = abs(x-g(x))
@@ -49,7 +43,10 @@ function fncIteration(g::Function,x::Float64)
     return x
 end
 
+g(x) = x.^0.5
+x = 0.1
 
+sol = fncIteration(g,x)
 
 
 # Demand
