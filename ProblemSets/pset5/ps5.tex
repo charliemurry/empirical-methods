@@ -26,10 +26,10 @@
 \begin{center}
 \textbf{PhD Empirical Methods}
 
-\emph{Spring 2020}\\[1em]
+\emph{Spring 2021}\\[1em]
 
-Problem Set 5 -- MLE and NLLS \\
-Due 4/15/2020\\[3em]
+Problem Set 5 -- Maximum Likelihood\\
+Due 4/22/2021\\[3em]
 \end{center}
 
 
@@ -82,16 +82,24 @@ In 1969, the popular magazine \emph{Psychology Today} published a 101-question s
 }+y_{i}x_{i}^{\prime }\beta -\ln y_{i}!\right]
 \end{eqnarray*}
 
-The residual sum of squares is:%
-\[
-S\left( \beta \right) =\sum\limits_{i=1}^{n}\left( y_{i}-e^{\beta ^{\prime
-}x_{i}}\right) ^{2} 
-\]
+% The residual sum of squares is:%
+% \[
+% S\left( \beta \right) =\sum\limits_{i=1}^{n}\left( y_{i}-e^{\beta ^{\prime
+% }x_{i}}\right) ^{2} 
+% \]
 
 % subsubsection data_description (end) 
 
 
-\noindent \textbf{1.} Estimate the parameter vector $\bs{\beta}$ using maximum likelihood. Use as the starting value a vector of zeros. Use four algorithms, FMINUNC (Matlab routine) without a derivative supplied, FMINUNC with a derivative supplied, Nelder Mead, and the BHHH maximum likelihood method we went over in class (this is the only one your should code yourself). Report the estimated parameters for each case, the number of iterations, and the number of function evaluations.\\
+\noindent \textbf{1.} Estimate the parameter vector $\bs{\beta}$ using maximum likelihood. Use as the starting value a vector of zeros. Use four algorithms:
+\begin{enumerate}
+	\item nelder-mead;
+	\item Quasi-newton with BFGS Hessian without a user-supplied derivative;
+	\item Quasi-newton with BFGS with a user-supplied derivative;
+	\item the MLE technique we went over in class that uses the score function to approximate the Hessian (this is also referred to as BHHH).
+\end{enumerate}
+
+Report the estimated parameters for each case, the number of iterations, and the number of function evaluations.\\
 
 \noindent \textbf{2.} Report the eigenvalues for the Hessian approximation for the BHHH MLE method from the last question. Report the eigenvalues for the initial Hessian, and the Hessian at the estimated parameters.  \\
 
@@ -101,7 +109,7 @@ S\left( \beta \right) =\sum\limits_{i=1}^{n}\left( y_{i}-e^{\beta ^{\prime
 
 
 \noindent
-Turn in your results, including a hard-copy of your programs and log file. Abbreviate the log file by deleting the print out of each optimization iteration. 
+Turn in your results in a way that I can easily read your code and match it to your results, eg. a Jupyter notebok or a well organized script.
 
 
 
