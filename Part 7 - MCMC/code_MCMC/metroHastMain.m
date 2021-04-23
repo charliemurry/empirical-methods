@@ -3,12 +3,13 @@
 % each time it samples from the proposal distribution.
 
 clear all;
+clc
 
 %   construct a data set of 500 draws from a N(2,4) distribution or load
 %   an existing data set
 
 % mu_a  = 2 ;
-% var_a = 4 ;
+% var_a = 2 ;
 % cases = 500;   
 % data_n24 = mvnrnd(mu_a,var_a,cases);
 % save data_n24;
@@ -48,13 +49,13 @@ tic;
 T          = 20000;            % total length of the chain
 theta      = zeros(T,2);
 theta(1,:) = theta0;
-curr_pi    = objfnc(theta0) + log(mvnpdf(theta0,prmu,prsig));
+curr_pi    = objfnc(theta0) + log(mvnpdf(theta0,prmu,prsig)); % log( L(theta) * p(theta) )
 
 iaccept    = 0;               % counter for number of acceptances
 t = 2;
 while t <= T  
    innov = promu' + normrnd([0 0], [1 1])*prosig;
-   propose   = theta(t-1,:) + innov;    
+   propose   = theta(t-1,:) + innov;   % Guess new param = old param + innovation    
    propose(2)= abs(propose(2));
    lik       = objfnc(propose) ;                 % log-likelihood at proposed theta
    prior     = log(mvnpdf(propose,prmu,prsig)) ; % log of prior at proposed theta 

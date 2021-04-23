@@ -51,9 +51,11 @@ trapInt(f,0,1,5)
 simpsonInt(f,0,1,5)
 
 
-# Noe what about higher order polynomials?
+# Now what about higher order polynomials?
 g(x) = x^4
 G(x) = (1/5)*x^4
+
+plot(g,0,1)
 
 G(1) - G(0)
 trapInt(g,0,1,1)
@@ -63,9 +65,12 @@ trapInt(g,0,1,5)
 simpsonInt(g,0,1,5)
 
 
-
+# Even crazier polynomial
 h(x) = 10x^7 + 5x^4 + (1/4)x^3 + 6
 H(x) = (5/4)x^8 + x^5 + (1/16)x^4 +6x
+
+plot(h,0,1)
+
 
 H(1) - H(0)  # Truth 
 

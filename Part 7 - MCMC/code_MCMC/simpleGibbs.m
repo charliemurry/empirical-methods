@@ -3,6 +3,7 @@
 %from the multivariate normal directly.
 clear;
 close all;
+set(0,'DefaultFigureWindowStyle','docked')
 
 %Set the Seed for the Random Number generator..
 % '0' sets the seed of the clock, any other integer will give you the same
@@ -12,7 +13,7 @@ randn('seed', 0);
 %Set parameters
 mu = [0 2];
 sig = [3 3];
-rho = .8;
+rho = .3;
 
 %Setup space to store draws...
 %T = 100;
@@ -44,7 +45,7 @@ for t=2:T
     samp(t,2) = normrnd(mu(2) + rho*(sig(2)/sig(1))*(samp(t,1) - mu(1)), ...
         sqrt(sig(2)^2*(1 - rho^2)));
     if animate
-        scatter(samp(1:t, 1), samp(1:t,2));
+        scatter(samp(1:t, 1), samp(1:t,2),'LineWidth',0.75);
         axis(myaxis);
         pause(.05);
     end

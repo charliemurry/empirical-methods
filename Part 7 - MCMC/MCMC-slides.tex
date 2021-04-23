@@ -233,7 +233,7 @@ $$\tilde{\tau}^2 = \left(  \frac{N}{\sigma^2} + \frac{1}{\tau^2} \right)^{-1} $$
 
 \begin{frame}[c]\frametitle{Review of Monte Carlo Integration}
     
-The point of monte carlo integration is to use draws from a distribution to calculate the moments of $\rho(\theta|y)$. If $\rho(\cdot)$ is ``easy'' to draw from (say, uniform or normal) than we can use traditional monte carlo integration techniques: 
+The point of monte carlo integration is to use draws from a distribution to calculate the moments of $\rho(\theta|y)$. If $\rho(\cdot)$ is ``easy'' to draw from (say, uniform or normal) then we can use traditional monte carlo integration techniques: 
 $$E[m(\theta)] = \int_\Theta m(\theta) \rho(\theta|y) d\theta \approx \frac{1}{S} \sum_{s=1}^S m(\theta_s)$$
 \begin{itemize}
 \item $m(\cdot)$ is an arbitrary function, say identity if we want the mean. We need to assume this expectation exists (of course).  
@@ -271,13 +271,13 @@ where $\theta_i \sim F(\cdot | \theta_{i-1})$.
 \begin{frame}[c]\frametitle{English, please?}
     
 
-ergodic: statistical properties can be deduced from a single, sufficiently long, random sample of the process. 
+\textbf{ergodic:} statistical properties can be deduced from a single, sufficiently long, random sample of the process. 
 
 \vspace{2em}
-note ergodic: a process that changes erratically at an inconsistent rate
+\textbf{not ergodic:} a process that changes erratically at an inconsistent rate
 
 \vspace{2em}
-stationary distribution: probability distribution that remains unchanged in the Markov chain as time progresses. (The transition matrix of a discrete processes remains constant)
+\textbf{stationary distribution:} probability distribution that remains unchanged in the Markov chain as time progresses. (The transition matrix of a discrete processes remains constant)
 
 \end{frame}
 
@@ -408,7 +408,7 @@ $$y_1 | y_2 \sim N(\mu_1 + \rho \frac{\sigma_1}{\sigma_2}(y_2 - \mu_2), \sigma_1
 
 \begin{frame}[c]\frametitle{Has My MCMC Chain Converged?}
     
-Properties of MCMC realy on limit arguments.  
+Properties of MCMC rely on limit arguments.  
 
 \Skip
 The more complicated the chain, the harder it is to make sure you have ``converged.''    
