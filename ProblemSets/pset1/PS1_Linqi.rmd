@@ -1,0 +1,177 @@
+---
+title: "PS1_Report"
+author: "Linqi Zhang"
+date: "1/24/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Load the simulated bids
+
+Simulated bids data description: a First Price Sealed Bid (FPSB) auction with three bidders.
+```{r, message = FALSE, warning = FALSE, echo=TRUE}
+library(tidyverse)
+library(fitdistrplus) # to use function fitdist
+library(spatstat) # to use function CDF
+
+dt <- read_csv("bids1.csv", col_names = c("bids"))
+ggplot (data = dt, aes(dt$bids)) + geom_histogram(binwidth = 0.25)
+```
+
+### 1.Estimate the density of bids
+
+##### a. an assumed normal distribution
+```{r, message = FALSE, warning = FALSE}
+fit.normal <- fitdist(dt$bids, "norm") 
+denscomp(fit.normal)
+```
+
+#### b. a Gaussian kernel
+```{r}
+fhat.1b <- density(dt$bids, bw="nrd0", adjust = 1,
+        kernel = "gaussian")
+plot(fhat.1b)
+```
+
+#### c. an Epanechnikov kernel
+In general case, the Silverman's plug-in bandwidth takes the formula $1.159*\delta_k*min(s,IQ/1.34)*n^{1/5}$, where $\delta_k$ is the canonical bandwidth of the chosen kernel function. It is approximately 0.7764 for gaussian, and 1.7188 for epanechnikov.
+For epanechnikov, the Silverman's plug-in bandwidth is $1.99*min(s,IQ/1.34)*n^{1/5}$.
+In the density() function, when bw=nrd0, it uses the Silverman's plug in bandwidth for gaussian kernel, where constant term is $1.159*\delta_k = 0.9$. So we need to transform it to epanechnikov by setting adjust = 1.99/0.9 = 2.2.
+```{r}
+fhat.1c <- density(dt$bids, bw="nrd0", adjust = 2.2,
+                   kernel = "epanechnikov") 
+plot(fhat.1c)
+```
+
+### 2. Use cross validation to select the optimal bandwidth
+The LSCV criterion function is given by: $\int_{-\infty}^{\infty} \hat f(x)^2 - \frac{2}{n}\sum_i \hat f_{-i}(X_i)$.
+```{r}
+bids <- dt$bids
+X = bids
+G <- function(h){
+  fhat=Vectorize(function(x) density(X,from=x,to=x,n=1,bw=h,kernel = "epanechnikov")$y)
+  fhati=Vectorize(function(i) density(X[-i],from=X[i],to=X[i],n=1,bw=h,kernel = "epanechnikov")$y)
+  F=fhati(1:length(X))
+  return(integrate(function(x) fhat(x)^2,-Inf,Inf)$value-2*mean(F))  
+}
+vx=seq(.15,.5,by=.01)
+vy=Vectorize(G)(vx)
+df=data.frame(vx,vy)
+
+qplot(vx,vy,geom="line",data=df)
+h.cv<- optimize(G,interval=c(.1,1))
+```
+
+### 3. Compare the estimated density functions
+```{r, message = FALSE, warning = FALSE}
+data <- as.data.frame(bids)
+ggplot(data,aes(bids))  + geom_histogram(aes(y = stat(density))) +
+  geom_line(stat = "density",bw = "nrd0", aes(col = 'Gaussian-Plug in')) +
+  geom_line(stat = "density", bw = "nrd0", adjust = 2.2,
+            kernel = "epanechnikov", aes(col = 'Epanechnikov-Plug in')) + 
+  geom_line(stat = "density", bw = h.cv$minimum,
+            kernel = "epanechnikov", aes(col = 'Epanechnikov-LSCV')) +
+  geom_line(stat = 'function', fun = dnorm, 
+            args = as.list(fit.normal$estimate), aes(col = 'Normal')) +
+  scale_color_manual(name = 'Kernel and Bandwidth Choice', 
+                     values = c('darkviolet', 'seagreen', 'darkturquoise','darkgoldenrod3'))
+```
+
+From the plots we can see the Gaussian kernel with Silverman's plug-in bandwidth fit the data best.
+
+### 4. Recover the valuation implied for each bid
+$\hat v = b + \frac{\hat G_B (b)}{(n-1)\hat g_B(b)},$ where $n=3$ is the number of bidders, $G()$ is the CDF of the bids, and $g()$ is the density of the bids.
+```{r}
+n = 3
+fhat.4 <- function(x) density(dt$bids, from=x, to=x, n=1, bw=h.cv$minimum, adjust = 1,
+                   kernel = "epanechnikov")$y
+fhat.4.pdf <- density(dt$bids, bw=h.cv$minimum, adjust = 1,
+                   kernel = "epanechnikov")
+Fhat.4 <- CDF(fhat.4.pdf)
+vhat <- bids + Fhat.4(bids) / ((n-1)*sapply(bids,fhat.4))
+```
+
+### 5. Estimate the density of valuations
+```{r}
+vhat_pdf <- density(vhat, bw="nrd0", adjust = 2.2,
+                   kernel = "epanechnikov") 
+plot(vhat_pdf)
+```
+
+### 6. Guess the DGP
+The estimated distribution of valuations is strictly positive, bell-shaped and right-skewed. It looks like a log-normal distribution with $\mu=1, \sigma=0.5$. 
+```{r, message = FALSE, warning = FALSE}
+data.6 <- as.data.frame(vhat)
+ggplot(data.6,aes(vhat))  + geom_histogram(aes(y = stat(density)), bins=22) +
+  geom_line(stat = "density", bw = "nrd0", adjust = 2.2,
+            kernel = "epanechnikov", aes(col = 'epanechnikov, adjust=2.2')) +
+  geom_line(stat = 'function', fun = dlnorm, args = list(meanlog = 1, sdlog = 0.5),
+            aes(col = 'hypothetic lognormal')) +
+  geom_line(stat = "density", bw = "nrd0", adjust = 1,
+            kernel = "epanechnikov", aes(col = 'epanechnikov, adjust=1')) +
+  geom_line(stat = "density", bw = "nrd0", adjust = 1,
+            kernel = "gaussian", aes(col = 'gaussian')) +  
+  scale_color_manual(name = 'Density', 
+                     values = c('darkviolet', 'seagreen', 'darkturquoise','darkgoldenrod3'))
+```
+
+### 7. Estimate the impact of adding an additional bidder
+Step 1: Approximate the recovered distribution of values $\hat v$ using a log normal.
+```{r, message = FALSE, warning = FALSE}
+fit.lognormal <- fitdist(vhat, "lnorm") 
+mu <- fit.lognormal$estimate[1]
+sigma <- fit.lognormal$estimate[2]
+```
+
+Step 2: Use the above estimated log normal parameters to recompute the bid function. (here I assume the reservation price being 0)
+```{r}
+fun.bid <- function(valuation, bidder, mu, sigma) {
+  Fval = function(v) plnorm(v, meanlog = mu, sdlog = sigma)
+  b = valuation - (1/ Fval(valuation)^(bidder - 1))*
+    integrate(function(x) Fval(x)^(bidder - 1), 0, valuation)$value 
+  return(b)
+}
+```
+
+Step 3: Simulate $M = 100$ sets of $L=100$ auction pairs (with 3 and 4 bidders), drawing $v$ from the recovered set of values $\hat v$ with replacement. (in addition to drawing $v$ from $\hat v$ we obtained in Q5, I also tried drawing from the approximate log normal distribution.)
+```{r}
+L <- 100
+M <- 100
+set.seed(420)
+fun.win <- function(bidder,bs="FALSE"){
+  if (bs=="TRUE") {
+    simVal <- sample(vhat, bidder*L, replace = TRUE)
+    simBid <- mapply(fun.bid, simVal, bidder, mu, sigma)
+  }
+  else {
+    simVal <- rlnorm(bidder*L, meanlog = mu, sdlog = sigma)
+    simBid <- mapply(fun.bid, simVal, bidder, mu, sigma)
+  }
+  return(matrix(simBid,ncol=100))
+}
+# when bs is set to true, v are drawn from vhat
+simBid3 <- replicate(M,fun.win(3, bs="TRUE")) 
+simBid4 <- replicate(M,fun.win(4, bs="TRUE"))
+```
+
+Step 4: For each $m \in M$, compute $\theta_m$ equals the expected difference in the winning bid going from 3 to 4 bidders.
+```{r}
+win3 <- colMeans(apply(simBid3,2:3,max))
+win4 <- colMeans(apply(simBid4,2:3,max))
+theta <- win4 - win3
+```
+
+Step 5: Report 95% confidence intervals on $\theta$
+```{r, message = FALSE, warning = FALSE}
+fit.normal.theta <- fitdist(theta, "norm")
+mu.theta <- fit.normal.theta$estimate[1]
+sig.theta <- fit.normal.theta$estimate[2]
+error <- qnorm(0.975)*sig.theta/sqrt(length(theta))
+left <- mu.theta - error
+right <- mu.theta + error
+cat("The 95% confidence interval is [",left, "," ,right,"].")
+```
+
