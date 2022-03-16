@@ -1,0 +1,116 @@
+\documentclass[10pt]{article} 
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage{geometry} 
+\geometry{verbose,marginparwidth=0.5in,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in} 
+\usepackage{lmodern}
+
+\usepackage{booktabs}
+
+\usepackage{enumitem}
+% \setlist{nosep}
+
+% \usepackage{amsfonts}
+% \usepackage{amsmath}
+\usepackage{comment}
+
+\usepackage{mathtools}
+\usepackage{bbm}
+\newcommand{\one}{\mathbbm{1}}
+\newcommand{\bs}{\boldsymbol}
+
+
+\begin{document}
+
+
+\begin{center}
+\textbf{PhD Empirical Methods}
+
+\emph{Spring 2021}\\[1em]
+
+Problem Set 5 -- Maximum Likelihood\\
+Due 4/22/2021\\[3em]
+\end{center}
+
+
+
+% \section*{Part A}
+
+% Do problem 4.2 in the scanned copy called MF42.pdf.
+
+
+
+% \vspace{2em}
+% \section*{Part B}
+
+
+% The data in pension.raw are a subset of data from Papke (1998) used to asses the impact of allowing individuals to choose their own asset allocations in pension plans. The last variable is choice of asset allocation, coded ``0'' ``mostly bonds'', ``50'' for ``mixed'', and ``100'' for ``mostly'' stocks. 
+
+
+
+In 1969, the popular magazine \emph{Psychology Today} published a 101-question survey on extramarital affairs. Professor Ray Fair (1978) extracted a sample of 601 observations on men and women who were currently in their first marriage and analyzed their responses to the survey. He used the ``Tobit'' model as his estimation framework for this study. The dependent variable is a count of the number of affairs, so instead of a Tobit, a standard Poisson model may be a better choice. Download the data set from github (ps5.mat), and estimate the parameters to the model below using the methods that I describe below. 
+
+\subsubsection*{Data Description} % (fold)
+ \label{ssub:data_description}
+
+ \begin{itemize}
+ 	\item $y$ - count data: number of affairs in the past year.
+ 	\item $\bs{x}$ - constant term=1, age, number of years married, religiousness (1-5 scale), occupation (1-7 scale), self-rating of marriage (1-5 scale)
+ \end{itemize}
+
+\subsubsection*{Assingment} % (fold)
+\label{ssub:assingment}
+
+ The following is the data generating assumptions for the Poisson model, where $j$ is the number of affairs:
+
+ \begin{align}
+ 	Pr[y_i=j] = \frac{e^{-\lambda_i}\lambda_i^j}{j!}\\
+ 	log(\lambda_i) = \bs{x}_i'\bs{\beta} \\
+ 	E(y_i\mid x_i) = e^{\bs{x}'_i\bs{\beta}}
+ \end{align}
+ for some $\bs{\beta} = (\beta_0,\beta_1,\beta_2,\beta_3,\beta_4,\beta_5)'$.
+
+ The log-likelihood function is: 
+
+\begin{eqnarray*}
+\ln L &=&\sum\limits_{i=1}^{n}\ln f\left( y_{i}\left\vert x_{i}\right.
+,\beta \right) \\
+&=&\sum\limits_{i=1}^{n}\ln \frac{e^{-\lambda _{i}}\lambda _{i}^{j}}{j!} \\
+&=&\sum\limits_{i=1}^{n}\left[ -\lambda _{i}+y_{i}\ln \lambda _{i}-\ln y_i!%
+\right] \\
+&=&\sum\limits_{i=1}^{n}\left[ -e^{\mathbf{x}_{i}\prime \mathbf{\beta }%
+}+y_{i}x_{i}^{\prime }\beta -\ln y_{i}!\right]
+\end{eqnarray*}
+
+% The residual sum of squares is:%
+% \[
+% S\left( \beta \right) =\sum\limits_{i=1}^{n}\left( y_{i}-e^{\beta ^{\prime
+% }x_{i}}\right) ^{2} 
+% \]
+
+% subsubsection data_description (end) 
+
+
+\noindent \textbf{1.} Estimate the parameter vector $\bs{\beta}$ using maximum likelihood. Use as the starting value a vector of zeros. Use four algorithms:
+\begin{enumerate}
+	\item nelder-mead;
+	\item Quasi-newton with BFGS Hessian without a user-supplied derivative;
+	\item Quasi-newton with BFGS with a user-supplied derivative;
+	\item the MLE technique we went over in class that uses the score function to approximate the Hessian (this is also referred to as BHHH).
+\end{enumerate}
+
+Report the estimated parameters for each case, the number of iterations, and the number of function evaluations.\\
+
+\noindent \textbf{2.} Report the eigenvalues for the Hessian approximation for the BHHH MLE method from the last question. Report the eigenvalues for the initial Hessian, and the Hessian at the estimated parameters. [you will need to to code this MLE solver by hand]  \\
+
+% \noindent \textbf{3.} Now estimate the model using the NLLS method we went over in class, starting from the same initial point. Report the results. \\
+
+% \noindent \textbf{4.} Report the standard errors for the BHHH and the NLLS methods. \\
+
+
+\noindent
+Turn in your results in a way that I can easily read your code and match it to your results, eg. a Jupyter notebok or a well organized script.
+
+
+
+\end{document}

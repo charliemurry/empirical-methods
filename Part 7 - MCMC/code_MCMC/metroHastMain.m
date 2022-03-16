@@ -3,18 +3,19 @@
 % each time it samples from the proposal distribution.
 
 clear all;
+clc
 
 %   construct a data set of 500 draws from a N(2,4) distribution or load
 %   an existing data set
 
 % mu_a  = 2 ;
-% var_a = 4 ;
+% var_a = 2 ;
 % cases = 500;   
 % data_n24 = mvnrnd(mu_a,var_a,cases);
 % save data_n24;
 % f_out = log(mvnpdf(data_n24,mu_a,var_a));
 
-global data;
+% global data;
 load data_n24;
 data = data_n24;
 
@@ -35,6 +36,10 @@ prosig      = 0.1*eye(2);
 
 theta0 = 5*ones(1,2);
 
+objfnc = @(x) logLike(x,data)
+objfncSA = @(x) -logLike(x,data)
+
+
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                    Construct the Markov chain
@@ -44,15 +49,15 @@ tic;
 T          = 20000;            % total length of the chain
 theta      = zeros(T,2);
 theta(1,:) = theta0;
-curr_pi    = logLike(theta0) + log(mvnpdf(theta0,prmu,prsig));
+curr_pi    = objfnc(theta0) + log(mvnpdf(theta0,prmu,prsig)); % log( L(theta) * p(theta) )
 
 iaccept    = 0;               % counter for number of acceptances
 t = 2;
 while t <= T  
    innov = promu' + normrnd([0 0], [1 1])*prosig;
-   propose   = theta(t-1,:) + innov;    
+   propose   = theta(t-1,:) + innov;   % Guess new param = old param + innovation    
    propose(2)= abs(propose(2));
-   lik       = logLike(propose) ;                 % log-likelihood at proposed theta
+   lik       = objfnc(propose) ;                 % log-likelihood at proposed theta
    prior     = log(mvnpdf(propose,prmu,prsig)) ; % log of prior at proposed theta 
    prop_pi   = lik + prior;
    delta     = prop_pi - curr_pi ;   %Log-ratio of proposal to current
@@ -99,7 +104,7 @@ tic;
 start = [1 1];
 
 %Anonymous function for the log posterior...
-l_post = @(th) logLike(th) + log(mvnpdf(th, prmu, prsig));
+l_post = @(th) logLike(th, data) + log(mvnpdf(th, prmu, prsig));
 
 %Don't need this since it is symmetric...cancels out...
 %l_proppdf = @(x,y) log(mvnpdf((x-y), promu', prosig));
@@ -116,4 +121,13 @@ v_theta = var(t_samp(B:end, :))
 acc
 toc;
 
+
+%% 
+fprintf(1,'Simulated Annealing algorithm on same likelihood fnc\n');
+
+rng default
+options = optimoptions('simulannealbnd','PlotFcns',...
+          {@saplotbestx,@saplotbestf,@saplotx,@saplotf});
+xSA = simulannealbnd(objfncSA,theta0,[],[],options);
     
+
